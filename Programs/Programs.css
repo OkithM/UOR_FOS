@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 #menu {
@@ -16,7 +17,6 @@ body {
     height: 400px;
     justify-self: center;
     align-items: center;
-    filter: brightness(0.9);
     z-index: -1;
 }
 
@@ -47,7 +47,13 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 20px;
+    margin: 20px 0;
+}
+
+.bluebg{
+    background-color: #06235b;
+    color: white;
+    padding-bottom: 20px;
 }
 
 .degree-description {
@@ -59,24 +65,40 @@ body {
 #bcsgdimg {
     background-image: url(./src/bcsgd.webp);
 }
+#bcssdimg {
+    background-image: url(./src/bcssd.webp);
+}
+#bscgdimg {
+    background-image: url(./src/bscgd.webp);
+}
+#bscsdimg {
+    background-image: url(./src/bscsd.webp);
+}
 
 .degree-img {
     margin: 8px 10px 8px 8px;
-    width: 20%;
-    background-size: cover;
+    width: 20vw;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 6px;
 }
 
-
 .degree-btn {
     padding: 8px 20px 10px 20px;
-    background-color: #06235b;
-    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
     font-size: 1em;
+}
+
+.bluebtn{
+    background-color: #06235b;
+    color: white;
+}
+
+.whitebtn{
+    background-color: white;
+    color: #06235b;
 }
