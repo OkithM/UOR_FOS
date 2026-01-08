@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#menu{
+    position: fixed;
+    width: 98%;
+    margin: 5px;
+}
+#landing{
+    display: flex;
+}
+#content{
+    display: flex;
+    flex-direction: column;
+}
