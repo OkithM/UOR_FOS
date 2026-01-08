@@ -1,17 +1,82 @@
-body{
+body {
     margin: 0;
     padding: 0;
 }
 
-#menu{
+#menu {
     position: fixed;
     width: 98%;
     margin: 5px;
 }
-#landing{
-    display: flex;
-}
-#content{
+
+#landing {
+    background-image: url(./src/Ruhuna.jpg);
     display: flex;
     flex-direction: column;
+    height: 400px;
+    justify-self: center;
+    align-items: center;
+    filter: brightness(0.9);
+    z-index: -1;
+}
+
+#landing h1 {
+    color: white;
+    font-size: 3em;
+    margin: 0;
+    padding: 0;
+    margin-top: 150px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#landing p {
+    color: white;
+    font-size: 1em;
+    margin: 10px;
+    padding: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+}
+
+.degreesection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.degree-description {
+    width: 60%;
+    min-width: 300px;
+    max-width: 1000px;
+}
+
+#bcsgdimg {
+    background-image: url(./src/bcsgd.webp);
+}
+
+.degree-img {
+    margin: 8px 10px 8px 8px;
+    width: 20%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+}
+
+
+.degree-btn {
+    padding: 8px 20px 10px 20px;
+    background-color: #06235b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
 }
