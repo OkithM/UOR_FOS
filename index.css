@@ -69,3 +69,7 @@ body{
     display: flex;   
     justify-content: space-evenly;
 }
+
+.contact{
+    font-size: 2vh;
+}
