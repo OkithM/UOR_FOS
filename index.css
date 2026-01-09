@@ -1,6 +1,7 @@
 body{
     font-size: 3vh;
     margin: 0;
+    padding:0;
 }
 
 #intro h2 {
@@ -17,15 +18,13 @@ body{
     
     border: 0.1em solid black;
     background-color: hsl(230, 87%, 29%);
-    height: 53vh;   
+    height: 65vh;
+    width:100%;
+    margin:0;
 }
 
 #ahead h2{
-    color:white;
-}
-
-#ahead h2 {
-    
+    color:white;   
     text-align: center;
 }
 
@@ -35,25 +34,27 @@ body{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    
+    margin: 0;  
     
 }
 
 .notice {
     border: 0.1em solid black;
-    padding-top: 2vh;
-    padding-right:2vh;
-    padding-left:2vh;
     background-color: rgb(241, 231, 231);
     border-radius: 2vh;
+    width:35vh;
     
-    width:20vh
+    text-align: center;
+    height: 50vh
+    
     
 }
 
 .notice img{
-    display: block;
-    width:20vh;
+    display: inline-block;
+    padding-top: 2vh;
+    
+    width:30vh;
     
 }
 
