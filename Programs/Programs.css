@@ -4,6 +4,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Menu */
 #menu {
     position: fixed;
     width: 98%;

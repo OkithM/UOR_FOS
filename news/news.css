@@ -14,3 +14,8 @@
 .box:hover .hover-text {
     display: block;
 }
+#menu {
+    position: fixed;
+    width: 98%;
+    margin: 5px;
+}
