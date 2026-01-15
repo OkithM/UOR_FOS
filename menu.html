@@ -1,39 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
+<style>
+    * {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="menu.css">
-</head>
+    #menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 5px 10px;
+        max-height: 60px;
+        background-color: white;
+        border-radius: 16px;
+    }
 
-<body>
-        <div id="menu">
-            <div id="logo">
-                <img src="./src/logo.png" alt="" id="logoimg">
-                <div id="logoname">
-                    <p id="logonamefos">Faculty of Science</p>
-                    <p id="logonameuor">University of Ruhuna</p>
-                </div>
-            </div>
-            <div id="pageslist">
-                <div id="pagename">
-                    <a>Home</a>
-                </div>
-                <div id="pagename">
-                    <a>Departments</a>
-                </div>
-                <div id="pagename">
-                    <a>Programs</a>
-                </div>
-                <div id="pagename">
-                    <a>News</a>
-                </div>
-                <div id="pagename">
-                    <a>Contact</a>
-                </div>
-            </div>
-</body>
+    #logo {
+        display: flex;
+        flex-direction: row;
+        /* background-color: white; */
+        border-radius: 10px;
+        padding: 2px 8px 2px 8px;
+        /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); */
+    }
 
-</html>
+    #logoname {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    #logoname p {
+        margin: 0 10px;
+        white-space: nowrap;
+    }
+
+    #logonamefos {
+        font-size: 30px
+    }
+
+    #logonameuor {
+        font-size: 15px;
+    }
+
+    #pageslist {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 5px;
+    }
+
+    #pagename {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    #pagename a {
+        padding: 2px 8px 5px 8px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    }
+</style>
+<div id="menu">
+    <div id="logo">
+        <img src="./src/logo.png" alt="" id="logoimg">
+        <div id="logoname">
+            <p id="logonamefos">Faculty of Science</p>
+            <p id="logonameuor">University of Ruhuna</p>
+        </div>
+    </div>
+    <div id="pageslist">
+        <div id="pagename">
+            <a>Home</a>
+        </div>
+        <div id="pagename">
+            <a>Departments</a>
+        </div>
+        <div id="pagename">
+            <a>Programs</a>
+        </div>
+        <div id="pagename">
+            <a>News</a>
+        </div>
+        <div id="pagename">
+            <a>Contact</a>
+        </div>
+    </div>
+</div>
