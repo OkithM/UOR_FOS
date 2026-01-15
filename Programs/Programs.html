@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Menu -->
-    <link rel="stylesheet" href="./../menu.css">
-    
+
     <link rel="stylesheet" href="Programs.css">
-    <title>Document</title>
+    <title>Degree Programs</title>
 </head>
 
 <body>
@@ -22,30 +20,31 @@
         </div>
     </div>
 
-    <div class="degreesection">
+    <section class="program-intro">
+        <div class="container">
+            <h2>Empowering the Next Generation of Innovators</h2>
+            <p>
+                Welcome to the Faculty of Science at the University of Ruhuna. Our curriculum is
+                meticulously designed to bridge the gap between theoretical foundations and
+                modern industrial application. Whether you are seeking a versatile general degree
+                or a specialized research-intensive pathway, our programs provide the tools,
+                environment, and mentorship needed to thrive in a rapidly evolving digital landscape.
+            </p>
+            <div class="intro-divider"></div>
+        </div>
+    </section>
+
+    <div class="degreesection bluebg">
         <div id="bcsgdimg" class="degree-img">
         </div>
         <div class="degree-description">
-        <h2>BCS General Degree (Bachelor of Computer Science)</h2>
-        <p><b>Duration:</b> 3 Years</p>
-        <p><b>Overview:</b> This program provides a broad foundation in computing, focusing on the core principles of software development, database management, and networking. It is designed for students who want a versatile skill set to enter the tech industry quickly.</p>
-        <p><b>Key Focus:</b> Software engineering basics, web technologies, and systems analysis.</p>
-        <button class="degree-btn bluebtn">Learn More</button>
-        </div>
-        <div>
-            <!-- blank -->
-        </div>
-    </div>
-
-    <div class="degreesection bluebg">
-        <div id="bcssdimg" class="degree-img">
-        </div>
-        <div class="degree-description">
-        <h2>BCS Special Degree (Bachelor of Computer Science Honours)</h2>
-        <p><b>Duration:</b> 4 Years</p>
-        <p><b>Overview:</b> An intensive, research-oriented program for students seeking in-depth expertise. It includes advanced topics like Artificial Intelligence, Data Science, and Cybersecurity. The final year involves a significant individual research project or industrial placement.</p>
-        <p><b>Key Focus:</b> Advanced algorithms, machine learning, and specialized technical innovation</p>
-        <button class="degree-btn whitebtn">Learn More</button>
+            <h2>BCS General Degree (Bachelor of Computer Science)</h2>
+            <p><b>Duration:</b> 3 Years</p>
+            <p><b>Overview:</b> This program provides a broad foundation in computing, focusing on the core principles
+                of software development, database management, and networking. It is designed for students who want a
+                versatile skill set to enter the tech industry quickly.</p>
+            <p><b>Key Focus:</b> Software engineering basics, web technologies, and systems analysis.</p>
+            <button class="degree-btn whitebtn">Learn More</button>
         </div>
         <div>
             <!-- blank -->
@@ -53,14 +52,16 @@
     </div>
 
     <div class="degreesection">
-        <div id="bscgdimg" class="degree-img">
+        <div id="bcssdimg" class="degree-img">
         </div>
         <div class="degree-description">
-        <h2>BSc General Degree (Bachelor of Science)</h2>
-        <p><b>Duration:</b> 3 Years</p>
-        <p><b>Overview:</b> This flexible degree allows students to combine Computer Science with other subjects (such as Mathematics, Physics, or Statistics). It is ideal for those who want a multi-disciplinary education and plan to apply computing skills in scientific or analytical fields.</p>
-        <p><b>Key Focus:</b> Interdisciplinary science, logic, and computational problem-solving.</p>
-        <button class="degree-btn bluebtn">Learn More</button>
+            <h2>BCS Special Degree (Bachelor of Computer Science Honours)</h2>
+            <p><b>Duration:</b> 4 Years</p>
+            <p><b>Overview:</b> An intensive, research-oriented program for students seeking in-depth expertise. It
+                includes advanced topics like Artificial Intelligence, Data Science, and Cybersecurity. The final year
+                involves a significant individual research project or industrial placement.</p>
+            <p><b>Key Focus:</b> Advanced algorithms, machine learning, and specialized technical innovation</p>
+            <button class="degree-btn bluebtn">Learn More</button>
         </div>
         <div>
             <!-- blank -->
@@ -68,19 +69,42 @@
     </div>
 
     <div class="degreesection bluebg">
-        <div id="bscsdimg" class="degree-img">
+        <div id="bscgdimg" class="degree-img">
         </div>
         <div class="degree-description">
-        <h2>BSc Special Degree (Bachelor of Science Honours in Computer Science)</h2>
-        <p><b>Duration:</b> 4 Years</p>
-        <p><b>Overview:</b> This is a prestigious pathway for students who excel in their first two years. It focuses on the theoretical and mathematical foundations of computing. Graduates are well-prepared for academic careers, high-level software architecture, or specialized scientific research.</p>
-        <p><b>Key Focus:</b> STheory of computation, high-performance computing, and rigorous scientific research.</p>
-        <button class="degree-btn whitebtn">Learn More</button>
+            <h2>BSc General Degree (Bachelor of Science)</h2>
+            <p><b>Duration:</b> 3 Years</p>
+            <p><b>Overview:</b> This flexible degree allows students to combine Comprother subjects
+                (such as Mathematics, Physics, or Statistics). It is ideal for thohi-disciplinary
+                education and plan to apply computing skills in scientific or analytical fields.</p>
+            <p><b>Key Focus:</b> Interdisciplinary science, logic, and computational problem-solving.</p>
+            <button class="degree-btn whitebtn">Learn More</button>
         </div>
         <div>
             <!-- blank -->
         </div>
     </div>
+
+    <div class="degreesection">
+        <div id="bscsdimg" class="degree-img">
+        </div>
+        <div class="degree-description">
+            <h2>BSc Special Degree (Bachelor of Science Honours in Computer Science)</h2>
+            <p><b>Duration:</b> 4 Years</p>
+            <p><b>Overview:</b> This is a prestigious pathway for students who excel in their first two years. It
+                focuses on the theoretical and mathematical foundations of computing. It prepares students for
+                academic careers, high-level software architecture, or specialized scientific research.</p>
+            <p><b>Key Focus:</b> Theory of computation, high-performance computing, and artificial intelligence
+                research.
+            </p>
+            <button class="degree-btn bluebtn">Learn More</button>
+        </div>
+        <div>
+            <!-- blank -->
+        </div>
+    </div>
+    <!-- Footer -->
+    <div id="footer"></div>
 
     <!-- Menu -->
     <script>
@@ -88,6 +112,11 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('menu').innerHTML = data;
+            });
+        fetch('./../footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
             });
     </script>
 </body>

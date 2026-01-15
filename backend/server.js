@@ -18,6 +18,10 @@ const pool = mysql.createPool({
   queueLimit: 0,
 });
 
+//images
+const multer = require("multer");
+const upload = multer({ dest: "public/images/" });
+
 // Function to fetch latest news from the database
 async function fetchLatestNews() {
   try {
@@ -42,9 +46,12 @@ app.use(
   })
 );
 
-// Basic Route (GET request)
 app.get("/latestnews", (req, res) => {
   res.json(lnews);
+});
+
+app.post("/createNews", async (req, res) => {
+  console.log(req.body);
 });
 
 // Start the server
