@@ -20,7 +20,16 @@ const pool = mysql.createPool({
 
 //images
 const multer = require("multer");
-const upload = multer({ dest: "public/images/" });
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "public/images/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
 
 // Function to fetch latest news from the database
 async function fetchLatestNews() {
@@ -50,8 +59,21 @@ app.get("/latestnews", (req, res) => {
   res.json(lnews);
 });
 
-app.post("/createNews", async (req, res) => {
-  console.log(req.body);
+app.post("/createNews", upload.single("image"), async (req, res) => {
+  const { title, content, date } = req.body;
+  const imagePath = "images/" + req.file.filename;
+  try {
+    const [result] = await pool.query(
+      "INSERT INTO news (title, content, date, image_path) VALUES (?, ?, ?, ?)",
+      [title, content, date, imagePath]
+    );
+    console.log("News item inserted:", result.insertId);
+    fetchLatestNews(); // Refresh latest news
+    res.json({ success: true });
+  } catch (err) {
+    console.error("Error inserting news item:", err);
+    res.json({ success: false, message: "Database error" });
+  }
 });
 
 // Start the server

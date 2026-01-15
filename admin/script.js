@@ -28,7 +28,7 @@ const serverUrl = "http://localhost:3000";
 function createnews(event) {
 
     event.preventDefault();
-    let data = {};
+    const formData = new FormData();
     const title = document.getElementById("title").value.trim();
     const content = document.getElementById("content").value.trim();
     const date = document.getElementById("date").value;
@@ -38,12 +38,15 @@ function createnews(event) {
         alert("Please fill in all fields and select an image.");
         return;
     }
-    data = { "title": title, "content": content, "date": date, "image": image };
+    formData.append("title", title);
+    formData.append("content", content);
+    formData.append("date", date);
+    formData.append("image", image);
 
-    console.log(data);
+    console.log(...formData.entries());
     fetch(`${serverUrl}/createNews`, {
         method: "POST",
-        body: data
+        body: formData
     })
         .then(response => response.json())
         .then(data => {
