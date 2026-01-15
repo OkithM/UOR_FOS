@@ -39,6 +39,42 @@ body {
     text-align: center;
 }
 
+.program-intro {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    /* Light gray to contrast the white/blue sections */
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.program-intro .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.program-intro h2 {
+    color: #002147;
+    /* Matching the dark blue in your header */
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.program-intro p {
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.intro-divider {
+    width: 60px;
+    height: 4px;
+    background-color: #002147;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
 #content {
     display: flex;
     flex-direction: column;
@@ -51,7 +87,7 @@ body {
     margin: 20px 0;
 }
 
-.bluebg{
+.bluebg {
     background-color: #06235b;
     color: white;
     padding-bottom: 20px;
@@ -66,12 +102,15 @@ body {
 #bcsgdimg {
     background-image: url(./src/bcsgd.webp);
 }
+
 #bcssdimg {
     background-image: url(./src/bcssd.webp);
 }
+
 #bscgdimg {
     background-image: url(./src/bscgd.webp);
 }
+
 #bscsdimg {
     background-image: url(./src/bscsd.webp);
 }
@@ -94,12 +133,12 @@ body {
     font-size: 1em;
 }
 
-.bluebtn{
+.bluebtn {
     background-color: #06235b;
     color: white;
 }
 
-.whitebtn{
+.whitebtn {
     background-color: white;
     color: #06235b;
 }
