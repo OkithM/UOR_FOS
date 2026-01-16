@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Upload News</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Upload News Item</h1>
+        <form method="post" enctype="multipart/form-data" onsubmit="createnews(event);">
+            <div class="row">
+                <div>
+                    <label for="title">News Title</label>
+                    <input type="text" id="title" name="title" placeholder="Enter a short, descriptive headline"
+                        required />
+                </div>
+                <div>
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" />
+                </div>
+            </div>
+
+            <div class="meta">
+                <div style="flex: 1">
+                    <label for="image">Upload Image</label>
+                    <input type="file" id="image" name="image" accept="image/*" />
+                </div>
+                <div>
+                    <label>&nbsp;</label>
+                    <img id="preview" alt="Image preview" style="display: none" />
+                </div>
+            </div>
+
+            <div>
+                <label for="content">News Content</label><br />
+                <textarea id="content" name="content"
+                    placeholder="Write the full news content here — the box is sized for about 1000 words. Use headings, paragraphs and links as needed."
+                    maxlength="8000"></textarea>
+            </div>
+
+            <div class="actions">
+                <button type="submit">Publish</button>
+                <button type="reset" class="secondary">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
