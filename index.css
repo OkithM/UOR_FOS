@@ -50,6 +50,7 @@ body {
     align-items: center;
     margin: 0;
     flex-wrap: wrap;
+    padding-bottom: 2vh;;
 }
 
 .notice {
@@ -103,11 +104,11 @@ body {
 #stories {
     display: flex;
     justify-content: space-evenly;
-    padding-bottom: 1vh;
+    padding-bottom: 2vh;
 }
 
 .important {
-    border: 2px solid black;
+    
 }
 
 #calender_dates {
@@ -118,11 +119,12 @@ body {
 
 .calender {
     height: 10vh;
-    transition: 0.25s;
+    
 }
 
 .calender:hover {
     box-shadow: 0vh 10vh 20vh black;
+    transition: 0.25s;
 }
 
 
@@ -130,9 +132,29 @@ body {
     text-decoration: none;
 }
 
+.contact img{
+    height:3vh;
+}
+
+#gmail{
+    display: flex;
+    justify-content: right;
+}
+
+#gmail img{
+    padding-top:2.5vh;
+}
+
 #venue{
     text-align: left;
     margin-left:3vh;
+}
+
+#gmail{
+    font-size: 2.5vh;
+    text-align: right;
+    padding-bottom: 1vh;
+    
 }
 
 #footer {
