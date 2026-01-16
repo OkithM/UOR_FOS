@@ -48,16 +48,17 @@
         margin-right: 5px;
     }
 
-    #pagename {
+    .pagename {
         margin-right: 5px;
         margin-left: 5px;
     }
 
-    #pagename a {
+    .pagename a {
+        cursor: pointer;
         padding: 2px 8px 5px 8px;
         background-color: white;
         border-radius: 8px;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); */
     }
 </style>
 <div id="menu">
@@ -69,19 +70,19 @@
         </div>
     </div>
     <div id="pageslist">
-        <div id="pagename">
+        <div id="pagename_home" class="pagename">
             <a>Home</a>
         </div>
-        <div id="pagename">
+        <div id="pagename_departments" class="pagename">
             <a>Departments</a>
         </div>
-        <div id="pagename">
+        <div id="pagename_programs" class="pagename">
             <a>Degree Programs</a>
         </div>
-        <div id="pagename">
+        <div id="pagename_news" class="pagename">
             <a>News</a>
         </div>
-        <div id="pagename">
+        <div id="pagename_contact" class="pagename">
             <a>Contact</a>
         </div>
     </div>

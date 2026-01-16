@@ -44,7 +44,7 @@
                 of software development, database management, and networking. It is designed for students who want a
                 versatile skill set to enter the tech industry quickly.</p>
             <p><b>Key Focus:</b> Software engineering basics, web technologies, and systems analysis.</p>
-            <button class="degree-btn whitebtn">Learn More</button>
+            <button class="degree-btn whitebtn" onclick="showdetails();">Learn More</button>
         </div>
         <div>
             <!-- blank -->
@@ -61,7 +61,7 @@
                 includes advanced topics like Artificial Intelligence, Data Science, and Cybersecurity. The final year
                 involves a significant individual research project or industrial placement.</p>
             <p><b>Key Focus:</b> Advanced algorithms, machine learning, and specialized technical innovation</p>
-            <button class="degree-btn bluebtn">Learn More</button>
+            <button class="degree-btn bluebtn" onclick="showdetails();">Learn More</button>
         </div>
         <div>
             <!-- blank -->
@@ -78,7 +78,7 @@
                 (such as Mathematics, Physics, or Statistics). It is ideal for thohi-disciplinary
                 education and plan to apply computing skills in scientific or analytical fields.</p>
             <p><b>Key Focus:</b> Interdisciplinary science, logic, and computational problem-solving.</p>
-            <button class="degree-btn whitebtn">Learn More</button>
+            <button class="degree-btn whitebtn" onclick="showdetails();">Learn More</button>
         </div>
         <div>
             <!-- blank -->
@@ -97,7 +97,7 @@
             <p><b>Key Focus:</b> Theory of computation, high-performance computing, and artificial intelligence
                 research.
             </p>
-            <button class="degree-btn bluebtn">Learn More</button>
+            <button class="degree-btn bluebtn" onclick="showdetails();">Learn More</button>
         </div>
         <div>
             <!-- blank -->
@@ -106,19 +106,71 @@
     <!-- Footer -->
     <div id="footer"></div>
 
+    <div id="degreeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal();">&times;</span>
+
+            <div class="modal-header">
+                <h2>BCS General Degree (Honours)</h2>
+                <p class="subtitle">Bachelor of Computer Science - 4 Years</p>
+            </div>
+
+            <div class="modal-body">
+                <section class="overview">
+                    <h3>Program Overview</h3>
+                    <p>This program provides a solid foundation in computer science principles, combining theoretical
+                        knowledge with practical industry skills. Students specialize in software engineering, data
+                        science, and network security.</p>
+                </section>
+
+                <section class="chart-section">
+                    <h3>Credit Distribution</h3>
+                    <div class="chart-container">
+                        <div class="chart-bar-wrapper">
+                            <span>Core CS</span>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 85%;">85%</div>
+                            </div>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <span>Mathematics</span>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 60%;">60%</div>
+                            </div>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <span>Soft Skills</span>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 40%;">40%</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="details-grid">
+                    <div class="entry-req">
+                        <h3>Entry Requirements</h3>
+                        <ul>
+                            <li>Minimum 3 passes in GCE A/L (Physical Science stream)</li>
+                            <li>Credit pass for English in GCE O/L</li>
+                            <li>Successful completion of Aptitude Test</li>
+                        </ul>
+                    </div>
+                    <div class="career-paths">
+                        <h3>Career Prospects</h3>
+                        <ul>
+                            <li>Full Stack Developer</li>
+                            <li>System Architect</li>
+                            <li>Data Scientist</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Menu -->
-    <script>
-        fetch('./../menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('menu').innerHTML = data;
-            });
-        fetch('./../footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-    </script>
+    <script src=" ./script.js"></script>
 </body>
 
 </html>
