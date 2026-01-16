@@ -19,6 +19,7 @@ body {
     justify-self: center;
     align-items: center;
     z-index: -1;
+    background-size: cover;
 }
 
 #landing h1 {
@@ -230,4 +231,25 @@ body {
     display: flex;
     gap: 40px;
     margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .degreesection {
+        flex-direction: column;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .degree-img {
+        min-width: 100px;
+        min-height: 100px;
+    }
+
+    #landing h1 {
+        font-size: 2.5rem;
+    }
+
+    #logoname {
+        display: none;
+    }
 }
