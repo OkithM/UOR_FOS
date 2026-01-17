@@ -9,20 +9,15 @@
 </head>
 
 <body>
+
+    <!-- Menu -->
+    <div id="menu"></div>
+
     <div id="container">
-        <!--<nav>
-            <div id="uor">
-                <img src="#">University of Ruhuna FOS
-            </div>
-            <div class="tab">Home</div>
-            <div class="tab">About Faculty</div>
-            <div class="tab">Programs</div>
-            <div class="tab">Departments</div>
-            <div class="tab">Announcements</div>
-            <div class="tab">Contact</div>
-        </nav> -->
         <div id="Fosimg">
-            <img src="#">
+            <h1 id="welcome">Welcome to the Faculty of <br>Science(FOS)</h1>
+            <p id="motto">Dedicated to academic excellence, research, and national development</p>
+
         </div>
 
         <div id="intro">
@@ -82,40 +77,79 @@
             <h2>Top Stories</h2>
             <div id="stories">
                 <div id="date" class="important">
-                    <h4>Important Dates</h4>
+                    <h3>Important Dates</h3>
+                    <p><u>Upcoming Important dates</u></p>
+                    <div id="calender_dates">
+                        <a href=""><img src="./src/5calc.png" class="calender"></a>
+                        <a href=""><img src="./src/19calc.png" class="calender"></a>
+                        <a href=""><img src="./src/14calc.png" class="calender"></a><br>
+                        <a href=""><img src="./src/10calc.png" class="calender"></a>
+                        <a href=""><img src="./src/23calc.png" class="calender"></a>
+                        <a href=""><img src="./src/9calc.png" class="calender"></a>
+                    </div>
+
                 </div>
                 <div id="details" class="important">
-                    <h4>Department Details</h4>
+                    <h3>Department Details</h3>
+                    <p><u>Details of the Departments</u></p>
                     <div class="under_departments">
                         <a href="">List of Departments</a>
-                    </div><hr>
+                    </div>
+                    <hr>
 
                     <div class="under_departments">
                         <a href="">Academic Staff</a>
-                    </div><hr>
+                    </div>
+                    <hr>
 
                     <div class="under_departments">
                         <a href="">Academic Staff</a>
-                    </div><hr>
+                    </div>
+                    <hr>
 
                 </div>
                 <div id="location" class="important">
-                    <h4>Contact & Location</h4>
+                    <h3>Contact & Location</h3>
                     <div id="venue" class="contact">
-                        <img src="#">University of Ruhuna,<br>Wellamadama,<br>Matara(81000)<br>Sri Lanka.
+                        <img src="./src/location.png">University of Ruhuna,<br>Wellamadama,<br>Matara(81000)<br>Sri
+                        Lanka.
                     </div>
                     <div id="gmail" class="contact"><br>
-                        <img src="#"><a href>regoffice@admin.ruh.ac.lk</a>
+                        <img src="./src/mail.png"><a href="mailto:regoffice@admin.ruh.ac.lk">
+                            <p>regoffice@admin.ruh.ac.lk<p>
+                        </a>
                     </div>
+
                     <div id="telephone" class="contact">
-                        Telephone No: (+94) 41-2033250
+                        <img src="./src/phone.png">Telephone No: <br>(+94) 41-2033250
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Footer -->
         <div id="footer"></div>
     </div>
+
+    <script>
+        fetch('./../menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu').innerHTML = data;
+                activePage = document.getElementById("pagename_home");
+                activePage.style.color = "#003366";
+                activePage.style.fontWeight = "bold";
+            });
+        fetch('./../footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        function showpagename() {
+            document.getElementById("pageslist").style.display = "flex";
+        }
+    </script>
 </body>
 
 </html>

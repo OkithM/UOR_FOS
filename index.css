@@ -1,29 +1,50 @@
-body{
-    font-size: 3vh;
+body {
     margin: 0;
-    padding:0;
+    padding: 0;
+}
+
+/* Menu */
+#menu {
+    position: fixed;
+    width: 98%;
+    margin: 5px;
+}
+
+#Fosimg {
+    background-image: url(./src/Ruhuna.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    color: white;
+    padding-top: 1vh;
+    text-align: center;
+}
+
+#welcome {
+    margin-top: 15vh;
 }
 
 #intro h2 {
     text-align: center;
 }
 
-#intro div{
-    margin-left:20vh;
-    margin-right:20vh;
+#intro div {
+    margin-left: 20vh;
+    margin-right: 20vh;
     text-align: justify;
 }
 
-#ahead{
-    
+#ahead {
+
     border: 0.1em solid black;
     background-color: hsl(230, 87%, 29%);
-    width:auto;
-    margin:0;
+    width: auto;
+    margin: 0;
 }
 
-#ahead h2{
-    color:white;   
+#ahead h2 {
+    color: white;
     text-align: center;
 }
 
@@ -33,71 +54,110 @@ body{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 0;  
+    margin: 0;
     flex-wrap: wrap;
+    padding-bottom: 2vh;
+    ;
 }
 
 .notice {
     border: 0.1em solid black;
     background-color: rgb(241, 231, 231);
     border-radius: 2vh;
-    width:35vh;
+    width: 35vh;
     min-width: 33vh;
-    text-align: center; 
-}
-
-.notice img{
-    display: inline-block;
-    padding-top: 2vh;
-    
-    width:30vh;    
-}
-
-.notice p{
-    padding-left:1vh;
-    padding-right: 1vh;
-}
-
-.miniheading{
     text-align: center;
 }
 
-.description{
+.notice img {
+    display: inline-block;
+    padding-top: 2vh;
+
+    width: 30vh;
+}
+
+.notice p {
+    padding-left: 1vh;
+    padding-right: 1vh;
+}
+
+.miniheading {
+    text-align: center;
+}
+
+.description {
     text-align: justify;
     font-size: 0.8em;
 }
 
-.readmore{
+.readmore {
     font-size: 0.7em;
     margin-bottom: 2vh;
     background-color: rgb(47, 205, 237);
-    border:0.1em solid rgb(14, 92, 132);
+    border: 0.1em solid rgb(14, 92, 132);
     border-radius: 0.3em;
 }
 
-.readmore:hover{
-    background-color: rgb(18, 169, 220);;
+.readmore:hover {
+    background-color: rgb(18, 169, 220);
+    box-shadow: 0vh 10vh 20vh black;
 }
 
-#last{
+#last {
     text-align: center;
-    
+
 }
 
-#stories{
-    display: flex;   
+#stories {
+    display: flex;
     justify-content: space-evenly;
-    
+    padding-bottom: 2vh;
 }
 
-.important{
-    
+.important {}
+
+#calender_dates {
+    justify-content: space-evenly;
+    align-items: center;
+
 }
 
-.under_departments{
-    font-size: 0.7em;
+.calender {
+    height: 10vh;
+
 }
 
-.contact{
-    font-size: 2vh;  
+.calender:hover {
+    box-shadow: 0vh 10vh 20vh black;
+    transition: 0.25s;
+}
+
+
+.under_departments a {
+    text-decoration: none;
+}
+
+.contact img {
+    height: 3vh;
+}
+
+#gmail {
+    display: flex;
+    justify-content: right;
+}
+
+#gmail img {
+    padding-top: 2.5vh;
+}
+
+#venue {
+    text-align: left;
+    margin-left: 3vh;
+}
+
+#gmail {
+    font-size: 2.5vh;
+    text-align: right;
+    padding-bottom: 1vh;
+
 }
