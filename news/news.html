@@ -18,32 +18,28 @@
         </div>
     </section>
     <main id="cont">
+        <br><br><br>
         <div class="intro">
-            <div class="dept-middle">
+            <p>
                 The Faculty of Science, University of Ruhuna, is committed to excellence in science education, research,
-                and
-                innovation. Since its establishment, the Faculty has played a vital role in advancing scientific
-                knowledge and
-                producing highly skilled graduates who contribute meaningfully to national and global development.
-                <br><br>
-                The Faculty offers a dynamic learning environment supported by well-qualified academic staff, modern
-                laboratory
-                facilities, and a strong research culture. Our undergraduate and postgraduate programs are designed to
-                provide a
-                solid foundation in scientific principles while encouraging critical thinking, creativity, and ethical
+                and innovation. Since its establishment, the Faculty has played a vital role in advancing scientific
+                knowledge and producing highly skilled graduates who contribute meaningfully to national and global development.
+            </p>
+            <p>
+                The Faculty offers a dynamic learning environment supported by well-qualified academic staff, modern laboratory facilities, and a strong research culture. Our undergraduate and postgraduate programs are designed to
+                provide a solid foundation in scientific principles while encouraging critical thinking, creativity, and ethical
                 responsibility.
-                <br><br>
-                Through teaching, research, and community engagement, the Faculty of Science strives to nurture
-                competent scientists
-                and professionals capable of addressing contemporary challenges and contributing to sustainable
+            </p>
+            <p class="justify-text"> Through teaching, research, and community engagement, the Faculty of Science
+                strives to nurture
+             competent scientists and professionals capable of addressing contemporary challenges and contributing to sustainable
                 development. We
                 warmly welcome students, researchers, and collaborators to be part of our vibrant academic community.
-
-            </div>
+            </p>
         </div>
         <div id="news_and_announcements">
             <div id="news">
-                <h3>News</h3>
+                <h2>News</h2>
                 <div id="news1">
                     <div class="news-item">
                         <h5>32<sup>nd</sup> Convocation</h5>
@@ -113,21 +109,24 @@
                 All lectures and practical sessions scheduled for the day are cancelled
             </div>
             <hr>
-            <div id="special">
-                <h3>Coming Up Events</h3>
-                <div id="dates">Important Days
-
-                </div>
-            </div>
+            
         </div>
-
-        <script>
-            fetch('./../menu.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('menu').innerHTML = data;
-                });
-        </script>
+        <div class="events-section">
+            <h2>Coming Up Events</h2>
+            <h3>Important Dates</h3>
+            <div class="calendar-grid">
+                <div><img src="calendar.avif" alt="Calendar"></div>
+                <div><img src="calendar.avif" alt="Calendar"></div>
+                <div><img src="calendar.avif" alt="Calendar"></div>
+                <div><img src="calendar.avif" alt="Calendar"></div>
+            </div>
+            <script>
+                fetch('./../menu.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('menu').innerHTML = data;
+                    });
+            </script>
     </main>
 </body>
 
