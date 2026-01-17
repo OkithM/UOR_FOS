@@ -10,14 +10,42 @@
 </head>
 
 <body>
-    
-    <div id="menu"></div>
-    <div class="box">
-        <img src="university_background.jpg" alt="university_background_image" >
-        <div class="hover-text">university_background_image</div>
+    <div id="content">
+        <div id="landing">
+            <h1>News and Announcements</h1>
+            <p>Welcome to domnere Faculty of Science (FOS)</p>
+        </div>
+    </div>
+    <div id="news_and_announcements">
+        <div id="news">
+            <h3>News</h3>
+            <div id="news1">
+                text1 <br> Read More
+            </div>
+            <div id="news2">
+                text1 <br> Read More
+            </div>
+            <div id="news3">
+                text1 <br> Read More
+            </div>
+            <div id="news4">
+                text1 <br> Read More
+            </div>
+            <h3>Special Announcements</h3>
+            <div id="announcement1">text1</div><hr>
+            <div id="announcement2">text2</div><hr>
+            <div id="announcement3">text3</div><hr>
+            <div id="announcement4">text4</div><hr>
+        </div>
+        <div id="special">
+            <h3 >Coming Up Events</h3>
+            <div id="dates">Important Days
+
+            </div>
+        </div>
     </div>
 
-        <script>
+    <script>
         fetch('./../menu.html')
             .then(response => response.text())
             .then(data => {
@@ -25,7 +53,5 @@
             });
     </script>
 </body>
-
-
 
 </html>
