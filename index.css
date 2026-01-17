@@ -1,7 +1,13 @@
 body {
-    font-size: 3vh;
     margin: 0;
     padding: 0;
+}
+
+/* Menu */
+#menu {
+    position: fixed;
+    width: 98%;
+    margin: 5px;
 }
 
 #Fosimg {
@@ -50,7 +56,8 @@ body {
     align-items: center;
     margin: 0;
     flex-wrap: wrap;
-    padding-bottom: 2vh;;
+    padding-bottom: 2vh;
+    ;
 }
 
 .notice {
@@ -107,9 +114,7 @@ body {
     padding-bottom: 2vh;
 }
 
-.important {
-    
-}
+.important {}
 
 #calender_dates {
     justify-content: space-evenly;
@@ -119,7 +124,7 @@ body {
 
 .calender {
     height: 10vh;
-    
+
 }
 
 .calender:hover {
@@ -132,47 +137,27 @@ body {
     text-decoration: none;
 }
 
-.contact img{
-    height:3vh;
+.contact img {
+    height: 3vh;
 }
 
-#gmail{
+#gmail {
     display: flex;
     justify-content: right;
 }
 
-#gmail img{
-    padding-top:2.5vh;
+#gmail img {
+    padding-top: 2.5vh;
 }
 
-#venue{
+#venue {
     text-align: left;
-    margin-left:3vh;
+    margin-left: 3vh;
 }
 
-#gmail{
+#gmail {
     font-size: 2.5vh;
     text-align: right;
     padding-bottom: 1vh;
-    
-}
-
-#footer {
-    background-color: hsl(230, 87%, 29%);
-    color: white;
-    padding: 0.5vh;
-
-
-}
-
-#quick a {
-    text-decoration: none;
-    font-size: 2.5vh;
-    color: white;
-    padding-bottom: 0.5vh;
-}
-
-#copyright {
-    text-align: center;
 
 }
