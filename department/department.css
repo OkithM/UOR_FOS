@@ -1,102 +1,165 @@
 @import url("../menu.css");
 
-*{
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
 }
 
 body {
-    margin: 0;
-    padding: 0;
     overflow-x: hidden;
-}
-
-/* Menu */
-#menu {
-    position: fixed;
-    width: 98%;
-    margin: 5px;
+    background: #eef1f4;
 }
 
 #landing {
-    background-image: url(./src/Ruhuna.jpg);
-    background-repeat: no-repeat;
+    height: 420px;
+    background-image: url("./src/Ruhuna.jpg");
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
     display: flex;
-    flex-direction: column;
-    height: 400px;
-    justify-self: center;
     align-items: center;
-    z-index: -1;
+    justify-content: center;
+    position: relative;
 }
 
-#landing h1 {
-    color: white;
-    font-size: 3em;
-    margin: 0;
-    padding: 0;
-    margin-top: 150px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+#landing::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.10);
 }
 
-#landing p {
-    color: white;
-    font-size: 1em;
-    margin: 10px;
-    padding: 0;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+.landing-content {
+    position: relative;
     text-align: center;
+    color: #fff;
+    z-index: 1;
 }
+
+.landing-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.landing-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
 
 #content {
-    display: flex;
-    flex-direction: column;
+    padding: 60px 20px;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    width: 100%;
-}
-
-.description {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 70% 30%; /* 70% text, 30% image */
-  gap: 16px;                      /* space between columns */
-  align-items: center;            /* vertical alignment */
-  padding: 20px 0;                /* vertical padding */
-}
-
-.description img {
-  border-radius: 10px;
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
 
 .department {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 70px;
+    display: grid;
+    grid-template-columns: 1.2fr 2.4fr 1.6fr;
+    gap: 30px;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+    align-items: stretch; 
 }
 
-.department > .description,
-.department > .details {
-  width: 100%;
-  padding-left: calc((100vw - 1200px) / 2);
-  padding-right: calc((100vw - 1200px) / 2);
-  box-sizing: border-box;
+.dept-left {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-.details {
-  width: 100%;
-  min-height: 100px;
+.dept-left h2 {
+    font-size: 1.7rem;
+    color: #1f2d3d;
+    margin-bottom: 15px;
 }
 
-/* #bot,
-#cs,
-#phy {
-  background-color: #9d9898;
-} */
+.dept-left img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.dept-middle h3 {
+    color: #0a7c5f;
+    margin-bottom: 10px;
+}
+
+.dept-middle p {
+    line-height: 1.8;
+    font-size: 1rem;
+    color: #444;
+}
+
+.dept-middle ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.dept-right {
+    background: #f4f6f8;
+    padding: 20px;
+    border-radius: 14px;
+    height: fit-content;
+}
+
+.head-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.head-box img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #0a7c5f;
+    object-fit: cover;
+}
+
+.head-title {
+    font-size: 0.8rem;
+    color: #0a7c5f;
+    font-weight: bold;
+}
+
+.head-name {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #1f2d3d;
+}
+
+.other-details h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: #1f2d3d;
+}
+
+.other-details ul {
+    margin-left: 18px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.other-details li {
+    margin-left: 18px;
+
+    color: #2a2754;
+}
+
+.research-areas {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
