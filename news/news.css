@@ -48,11 +48,14 @@ body {
     display: flex;
     flex-direction: row;
 }
-#menu {
-    position: fixed;
-    width: 98%;
-    margin: 5px;
-    z-index: 10;
+#special_announcements{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(237, 218, 194);
+}
+#events{
+    display: flex;
+    flex-direction: row;
 }
 .container {
     max-width: 1200px;
@@ -62,10 +65,36 @@ body {
     text-align: justify;
 }
 .intro{
-    border: 2px solid rgb(175, 175, 84);
     padding: 10px;
     text-align: center;
     font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
     background-color: rgb(237, 218, 194);
+}
+.news-grid{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+.news{
+    flex: auto;
+    border: 1px;
+    max-width: fit-content;
+    padding: 10px;
+    text-align: center;
+}
+
+.news h3{
+    font-size: 18px;
+    margin: 10px;
+}
+.news p{
+    font-size: 14px;
+    color: rgb(6, 4, 4);
+}
+.news button{
+    background-color: rgb(155, 106, 201);
+    color: azure;
+    padding: 8px 12px;
+    cursor: pointer;
 }
