@@ -48,3 +48,9 @@ body {
     display: flex;
     flex-direction: row;
 }
+#menu {
+    position: fixed;
+    width: 98%;
+    margin: 5px;
+    z-index: 10;
+}
