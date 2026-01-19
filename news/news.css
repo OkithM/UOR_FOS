@@ -143,7 +143,10 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
-.news p {
+#h2{
+    font-family: 'Times New Roman', Times, serif;
+}
+.news p{
     font-size: 14px;
     color: rgb(6, 4, 4);
     
