@@ -102,11 +102,11 @@ body {
 }
 
 #bcsgdimg {
-    background-image: url(./src/bcsgd.webp);
+    background-image: url(./src/bcssd.webp);
 }
 
 #bcssdimg {
-    background-image: url(./src/bcssd.webp);
+    background-image: url(./src/bcsgd.webp);
 }
 
 #bscgdimg {
