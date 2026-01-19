@@ -25,6 +25,14 @@ body {
     margin-top: 15vh;
 }
 
+#intro{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
 #intro p{
     text-align: center;
 }
@@ -34,9 +42,17 @@ body {
 }
 
 #intro div {
-    margin-left: 20vh;
-    margin-right: 20vh;
+    margin-left: 20px;
+    margin-right: 20px;
+    max-width:1000px;
     text-align: justify;
+}
+
+.intro-divider {
+    width: 60px;
+    height: 4px;
+    background-color: #002147;
+    border-radius: 2px;
 }
 
 #ahead {
@@ -116,6 +132,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     padding-bottom: 2vh;
+    flex-wrap: wrap;
 }
 
 
