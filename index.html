@@ -23,18 +23,19 @@
         <div id="intro">
             <h2>Introduction</h2>
             <div>
-                <p>  Welcome to the Faculty of Science at the University of Ruhuna. Our curriculum is
-                meticulously designed to bridge the gap between theoretical foundations and
-                modern industrial application. Whether you are seeking a versatile general degree
-                or a specialized research-intensive pathway, our programs provide the tools,
-                environment, and mentorship needed to thrive in a rapidly evolving digital landscape.</p>
+                <p> Welcome to the Faculty of Science at the University of Ruhuna. Our curriculum is
+                    meticulously designed to bridge the gap between theoretical foundations and
+                    modern industrial application. Whether you are seeking a versatile general degree
+                    or a specialized research-intensive pathway, our programs provide the tools,
+                    environment, and mentorship needed to thrive in a rapidly evolving digital landscape.</p>
             </div>
             <div class="intro-divider"></div>
         </div>
 
         <div id="ahead">
-            <h2>Achievements</h2>
-            <div id="achieve">
+            <h2>News</h2>
+            <div class="news-grid" id="news-grid"></div>
+            <!-- <div id="achieve">
                 <div class="notice">
                     <img src="./src/convocation.jpg">
                     <p class="miniheading">32<sup>nd</sup><br>Convocation<br></p>
@@ -59,7 +60,7 @@
                     <div class="buttons"><button type="button" class="readmore">Read More</button></div>
 
                 </div>
-            </div>
+            </div> -->
         </div>
         <div id="last">
             <h2>Top Stories</h2>
@@ -99,7 +100,8 @@
                 <div id="location" class="important">
                     <h3>Contact & Location</h3>
                     <div id="venue" class="contact">
-                        <img src="./src/location.png">Address:<br>University of Ruhuna,<br>Wellamadama,<br>Matara(81000)<br>Sri
+                        <img src="./src/location.png">Address:<br>University of
+                        Ruhuna,<br>Wellamadama,<br>Matara(81000)<br>Sri
                         Lanka.
                     </div>
                     <div id="gmail" class="contact"><br>
@@ -137,6 +139,32 @@
         function showpagename() {
             document.getElementById("pageslist").style.display = "flex";
         }
+
+
+        const newsGrid = document.getElementById("news-grid");
+
+        var latestnews = [];
+        const serverUrl = "http://localhost:3000";
+        var dots = "";
+
+        fetch(`${serverUrl}/latestnews`, {
+            method: "GET",
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                latestnews = data;
+                console.log(latestnews);
+
+                for (let i = 0; i < 3; i++) {
+                    if (latestnews[i].title.length > 50) {
+                        dots = "...";
+                    } else {
+                        dots = "";
+                    }
+                    var news = `<div class="news"><h3 style="color: #002147;">${latestnews[i].title.slice(0, 50)}${dots}</h3><div class="news-img" style="background-image: url(${serverUrl}/${latestnews[i].image_path});"  ></div> <p class="description">${latestnews[i].content.slice(0, 100)}...</p><button> <a href="https://www.ruh.ac.lk/index.php/en/news/895-the-32nd-convocation-2025" target="_blank">Read More</a> </button></div>`
+                    newsGrid.innerHTML += news;
+                }
+            });   
     </script>
 </body>
 
