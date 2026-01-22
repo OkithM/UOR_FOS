@@ -9,6 +9,17 @@
 </head>
 
 <body>
+    <div id="loginForm">
+        <form method="post" onsubmit="login(event);">
+            <h1>Login</h1><br>
+            <label for="username">Username</label>
+            <input type="text" id="username">
+            <label for="password">Password</label>
+            <input type="password" id="password">
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
     <div class="form-container">
         <h1>Upload News Item</h1>
         <form method="post" enctype="multipart/form-data" onsubmit="createnews(event);">
