@@ -142,26 +142,76 @@ body {
     flex-wrap: wrap;
 }
 
-
-
 #calender_dates {
-    justify-content: space-evenly;
-    align-items: center;
-
+    display:flex;
+    flex-direction: column;
+    box-shadow: 4px 14px 40px rgb(188, 182, 182);
+    width:100%;
+    border-radius: 10px;
 }
 
-.calender {
-    height: 60px;
-
+.calender_box{
+    display:flex;
+    padding:5px;
+    padding-right:10px;
+    align-items: center; 
 }
 
-.calender:hover {
-    box-shadow: 0vh 10vh 20vh black;
-    transition: 0.25s;
+.important_date{
+    width:60px;
+    border-radius:10px;
+    background-color:#f5fcff;
+    transition: 0.2s;
+}
+.important_date p{
+    margin:6px;
+}
+
+.month{
+    font-size: 12px;
+    color:red;  
+}
+
+.day{
+    font-size: 1.2em;
+    color:#032e60;
+    font-weight: 400;
+}
+
+.events{
+    margin-left:2px;
+    width:100%;
+    text-align: center;
+}
+
+.events h4{
+    width: 100%;
+    margin:0px; 
+}
+
+.events p{
+    margin:0px;
+    flex-grow: 1;
+    font-size:10px;
+    color:rgb(146, 144, 144);
+    text-align: center;
+}
+
+.important_date:hover{
+    background-color: #002147;
+    color:white;  
+}
+
+.important_date:hover .month{
+    color:gold;
+}
+
+.important_date:hover .day{
+    color:white;
 }
 
 #details p{
-    margin-bottom: 23px
+    margin-bottom: 23px;
 }
 
 .under_departments a {
