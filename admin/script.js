@@ -63,3 +63,16 @@ function createnews(event) {
             alert("An error occurred while publishing the news.");
         });
 }
+
+function login(event){
+    event.preventDefault();
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var logindata = {username : username,password:password};
+    console.log(logindata)
+    fetch(`${serverUrl}/login`,{
+        method: "POST",
+        headers:{"Content-Type": "application/json"},
+        body: JSON.stringify(logindata)
+    })
+}

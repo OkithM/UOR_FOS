@@ -9,6 +9,7 @@ body {
     position: fixed;
     width: 98%;
     margin: 5px;
+    z-index: 10;
 }
 
 #landing {
@@ -101,11 +102,11 @@ body {
 }
 
 #bcsgdimg {
-    background-image: url(./src/bcsgd.webp);
+    background-image: url(./src/bcssd.webp);
 }
 
 #bcssdimg {
-    background-image: url(./src/bcssd.webp);
+    background-image: url(./src/bcsgd.webp);
 }
 
 #bscgdimg {
@@ -247,9 +248,5 @@ body {
 
     #landing h1 {
         font-size: 2.5rem;
-    }
-
-    #logoname {
-        display: none;
     }
 }

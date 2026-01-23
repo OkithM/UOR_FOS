@@ -38,7 +38,7 @@ async function fetchLatestNews() {
       "SELECT * FROM news ORDER BY date DESC LIMIT 3;"
     );
     lnews = rows;
-    console.log("Latest news fetched:", lnews);
+    console.log("Latest news fetched:", lnews.length);
   } catch (err) {
     console.error("Error fetching latest news:", err);
   }
@@ -54,6 +54,10 @@ app.use(
     origin: ["http://localhost:5500", "http://127.0.0.1:5500"],
   })
 );
+
+app.post("/login",(req,res) =>{
+  console.log(req.body);
+});
 
 app.get("/latestnews", (req, res) => {
   res.json(lnews);

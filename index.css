@@ -25,20 +25,47 @@ body {
     margin-top: 15vh;
 }
 
+#intro{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    text-align: center;
+    padding: 60px;
+}
+
+#intro p{
+    text-align: center;
+    margin-bottom: 40px;
+    color: #444;
+}
+
 #intro h2 {
     text-align: center;
+    font-size: 2rem;
+    color: #002147;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 #intro div {
-    margin-left: 20vh;
-    margin-right: 20vh;
+    margin-left: 20px;
+    margin-right: 20px;
+    max-width:1000px;
     text-align: justify;
+}
+
+.intro-divider {
+    width: 60px;
+    height: 4px;
+    background-color: #002147;
+    border-radius: 2px;
 }
 
 #ahead {
 
     border: 0.1em solid black;
-    background-color: hsl(230, 87%, 29%);
+    background-color: #002147;
     width: auto;
     margin: 0;
 }
@@ -112,9 +139,10 @@ body {
     display: flex;
     justify-content: space-evenly;
     padding-bottom: 2vh;
+    flex-wrap: wrap;
 }
 
-.important {}
+
 
 #calender_dates {
     justify-content: space-evenly;
@@ -123,7 +151,7 @@ body {
 }
 
 .calender {
-    height: 10vh;
+    height: 60px;
 
 }
 
@@ -132,6 +160,9 @@ body {
     transition: 0.25s;
 }
 
+#details p{
+    margin-bottom: 23px
+}
 
 .under_departments a {
     text-decoration: none;
@@ -141,23 +172,90 @@ body {
     height: 3vh;
 }
 
-#gmail {
-    display: flex;
-    justify-content: right;
-}
-
-#gmail img {
-    padding-top: 2.5vh;
-}
-
 #venue {
     text-align: left;
     margin-left: 3vh;
 }
 
 #gmail {
-    font-size: 2.5vh;
+    display: flex;
+    justify-content: right;
+    font-size: 0.9em;
     text-align: right;
     padding-bottom: 1vh;
+    padding-left:20px
+}
 
+#gmail img {
+    padding-top: 2.5vh;
+}
+
+#telephone{
+    display: flex;
+    text-align: left;
+}
+
+#telephone img{
+    padding-left: 20px;
+}
+
+
+.news {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px;
+    max-width: fit-content;
+    padding: 10px;
+    text-align: center;
+    min-width: 200px;
+    max-width: 300px;
+    justify-content: space-between;
+    /* border-width: 0.5px;
+    border-style: solid;
+    border-color: rgb(180, 180, 180); */
+    background-color: aliceblue;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.4);
+}
+.news h3 {
+    font-size: 18px;
+    margin: 10px;
+}
+
+.news p {
+    font-size: 14px;
+    color: rgb(6, 4, 4);
+
+}
+
+.news button {
+    background-color: #002147;
+    color: azure;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.news button a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+.news-img {
+    min-width: 100px;
+    min-height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    aspect-ratio: 1;
+    border-radius: 16px;
+}
+
+.news-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
 }
