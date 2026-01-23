@@ -8,6 +8,8 @@ const cors = require("cors");
 
 const mysql = require("mysql2/promise");
 
+const crypto = require("crypto");
+
 const pool = mysql.createPool({
   host: "localhost",
   user: "root",
@@ -44,6 +46,22 @@ async function fetchLatestNews() {
   }
 }
 
+async function crateToken(username) {
+  token = crypto.randomBytes(16).toString("hex") + "-" + username;
+  await pool.query("UPDATE admin SET token = ? WHERE username = ?", [token, username]);
+  return token;
+}
+
+async function verifylogin(username, password) {
+  try {
+    const user = await pool.query("SELECT * FROM admin WHERE username = ? AND password = ?", [username, password]);
+    return user[0];
+  } catch (err) {
+    console.error("Error verifying login:", err);
+    return null;
+  }
+}
+
 // Middleware to parse JSON data
 app.use(express.json());
 
@@ -55,8 +73,18 @@ app.use(
   })
 );
 
-app.post("/login",(req,res) =>{
-  console.log(req.body);
+app.post("/login", (req, res) => {
+  username = req.body.username;
+  password = req.body.password;
+  verifylogin(username, password).then((user) => {
+    if (user.length > 0) {
+      console.log("Login successful for user:", username);
+      let token = crateToken(username);
+      res.json({ success: true, token: token });
+    } else {
+      console.log("Login failed for user:", username);
+    }
+  })
 });
 
 app.get("/latestnews", (req, res) => {

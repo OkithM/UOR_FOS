@@ -64,15 +64,28 @@ function createnews(event) {
         });
 }
 
-function login(event){
+function toconsole() {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("form-container").style.display = "block";
+}
+
+function login(event) {
     event.preventDefault();
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    var logindata = {username : username,password:password};
+    var logindata = { username: username, password: password };
     console.log(logindata)
-    fetch(`${serverUrl}/login`,{
+    fetch(`${serverUrl}/login`, {
         method: "POST",
-        headers:{"Content-Type": "application/json"},
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(logindata)
-    })
+    }).then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // localStorage.setItem("token", data.token);
+                toconsole();
+            } else {
+                alert("Login failed.");
+            }
+        });
 }
