@@ -145,7 +145,7 @@ body {
 #calender_dates {
     display:flex;
     flex-direction: column;
-    box-shadow: 4px 14px 40px rgb(188, 182, 182);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19);
     width:100%;
     border-radius: 10px;
 }
@@ -154,7 +154,8 @@ body {
     display:flex;
     padding:5px;
     padding-right:10px;
-    align-items: center; 
+    align-items: center;
+    padding-bottom: 10px;; 
 }
 
 .important_date{
@@ -210,12 +211,45 @@ body {
     color:white;
 }
 
-#details p{
-    margin-bottom: 23px;
+#list_departments{
+    display:flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19);
+    width:100%;
+    border-radius: 10px;
 }
 
-.under_departments a {
-    text-decoration: none;
+.depart_images{
+    height: 40px;
+}
+
+#inside_departments{
+    padding:5px;
+}
+
+.under_departments{
+    border:1px solid #e4f0fa; 
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.list_contents{
+    width:100%;
+}
+
+.under_departments
+
+.under_departments h4{
+    margin:1px;
+    padding-bottom: 2px;
+}
+
+.under_departments:hover{
+    box-shadow:  0 10px 20px rgba(0,0,0,0.19);
+    border-color:gold; 
 }
 
 .contact img {
