@@ -4,27 +4,101 @@ body{
     margin: 0;
     padding: 0;
 }
-.container{
-    width: 80%;
-    max-width: 900px;
-    margin: 40px auto;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
 
+
+
+#landing {
+    background-image: url(./Ruhuna.jpg);
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-self: center;
+    align-items: center;
+    z-index: -1;
+    background-size: cover;
+    width: 100vw;
 }
-h1{
+
+#landing h1 {
+    color: white;
+    font-size: 3em;
+    margin: 0;
+    padding: 0;
+    margin-top: 150px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#landing p {
+    color: white;
+    font-size: 1em;
+    margin: 10px;
+    padding: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     text-align: center;
-    color: #003366;
-
 }
-.subtitle{
+
+.flex1-box {
+    
+    display: flexbox;
+    flex-direction:row-reverse;
+    gap: space-evenly;
+    height: 400px;
+    justify-items:space-around;
+    align-items: center;
+    z-index: -1;
+    background-size: cover;
+    width: 100vw;
+}
+
+
+
+.address{
+    display: address;
+    justify-content: center;
+    align-items:center;
     text-align: center;
-    color: #555;
-    margin-bottom: 30px;
+    width:200px;
+    height: 150px;
+    background-color: aqua;
+    background-size: cover;
+}
 
+
+.phone{
+    display: phone;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    background-color: #457d9f;
+    background-size: cover;
 
 }
+
+.office-hours{
+    display: office-hours;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 250px;
+    height: 100px;
+    background-color: aqua;
+    background-size: cover;
+}
+
+.send{
+    display:send;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 400px;
+    height: 400px;
+    background-color: blue;
+    background-size: cover;
+}
+
 .contact-info h2,
 .contact-form h2{
     color: #003366;
@@ -76,4 +150,12 @@ button:hover{
 #status{
     margin-top: 15px;
     font-weight: bold;
+}
+
+
+.flex2-box{
+    display: flexbox;
+    width: 100vw;
+    height: 100px;
+
 }
