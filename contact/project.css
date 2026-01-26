@@ -1,4 +1,4 @@
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f4f6f8;
     margin: 0;
@@ -6,6 +6,12 @@ body{
 }
 
 
+/* Menu */
+#menu {
+    position: fixed;
+    width: 98%;
+    margin: 5px;
+}
 
 #landing {
     background-image: url(./Ruhuna.jpg);
@@ -17,6 +23,7 @@ body{
     z-index: -1;
     background-size: cover;
     width: 100vw;
+    background-attachment: fixed;
 }
 
 #landing h1 {
@@ -37,16 +44,16 @@ body{
     text-align: center;
 }
 
-#container{
+#container {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     gap: 25px;
-    align-items:start;
+    align-items: start;
     margin-top: 30px;
 
 }
 
-.shadow{
+.shadow {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19);
     padding: 15px;
     border-radius: 16px;
@@ -55,102 +62,108 @@ body{
 .flex1-box {
     flex: 1;
     display: flex;
-    flex-direction:column;
-    height:100%;
+    flex-direction: column;
+    height: 100%;
 
-    
- 
-    justify-items:right;
+
+
+    justify-items: right;
     align-items: end;
     background-size: cover;
     text-align: center;
-   
-}
-
-
-
-.address{
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items:center;
-    text-align: center;
-    padding:10px;
 
 }
 
 
-.phone{
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding:10px;
 
-}
-
-.office-hours{
+.address {
     display: flex;
     flex-direction: column;
-    
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding:10px;
+    padding: 10px;
+
 }
 
-.form{
+
+.phone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+
+}
+
+.office-hours {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.form {
     flex: 1;
-    height:100%;
+    height: 100%;
 }
 
-.send{
-    display:flex;
-    flex-direction:column;
+.send {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: left;
-    padding:15px;
+    padding: 15px;
     width: fit-content;
 }
 
-.flex1-box h3{
+.flex1-box h3 {
     margin-bottom: 0px;
 }
 
-.map iframe{
+.map iframe {
     width: 80vw;
     height: 400px;
 }
 
-.map{
+.map {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .contact-info h2,
-.contact-form h2{
-    
+.contact-form h2 {
+
     margin-top: 20px;
 
 }
-.contact-info p{
+
+.contact-info p {
     margin-left: 10px;
-    
+
 
 }
-.contact-form{
+
+.contact-form {
     margin-top: 30px;
 }
-label{
+
+label {
     display: block;
     margin-top: 15px;
     font-weight: bold;
 }
-input,textarea{
+
+input,
+textarea {
     width: 90%;
     padding: 10px;
     margin-top: 5px;
@@ -158,12 +171,14 @@ input,textarea{
     border: 1px solid#ccc;
 
 }
-textarea{
+
+textarea {
     height: 120px;
     resize: none;
 
 }
-button{
+
+button {
     margin-top: 20px;
     padding: 12px;
     width: 100%;
@@ -173,13 +188,14 @@ button{
     cursor: pointer;
 
 }
-#status{
+
+#status {
     margin-top: 15px;
     font-weight: bold;
 }
 
 
-.flex2-box{
+.flex2-box {
     display: flex;
     width: 100vw;
     height: 100px;
