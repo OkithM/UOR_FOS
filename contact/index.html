@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Faculty of Science - University of Ruhuna</title>
+    <link rel="stylesheet" href="project.css">
+
+</head>
+
+<body>
+
+    <div id="landing">
+        <h1>Contact Us</h1>
+        <h2 style="color: rgb(255, 255, 255);">Faculty of Science, University of Ruhuna</h2>
+    </div>
+
+
+
+    <div id="container">
+        <div class="flex1-box">
+
+            <div class="shadow">
+
+                <div class="address">
+                    <h3>📍Address</h3>
+                    <p>
+                        Faculty of Science,<br>
+                        University of Ruhuna,<br>
+                        Matara, Sri Lanka.
+                    </p>
+                </div>
+
+                <div class="phone">
+
+                    <h3>📞Phone</h3>
+                    <p> <a href="tel:+94 412227001">+94 41 2227001</a></p>
+                </div>
+                <div id="email">
+                    <h3>📧E-mail</h3>
+                    <p>
+                        <a href="mailto:office@sci.ruh.ac.lk">office@sci.ruh.ac.lk</a>
+                    </p>
+                </div>
+
+
+                <div class="office-hours">
+                    <h3>🕐Office Hours</h3>
+                    <p>Monday-Friday : 8.30 AM - 4.30 PM</p>
+                </div>
+
+                <!--Social Media-->
+                <section class="social-media">
+                    <h3>Follow Us</h3>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">WhatsApp</a>
+                </section>
+            </div>
+
+        </div>
+        <!--CONTACT FORM-->
+
+        <div class="form">
+            <div class="send shadow">
+                <h3><u>📝Send us a message</u></h3>
+                <form id="contact-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <label for="student-id">Student ID</label>
+                    <input type="text" id="student-id" placeholder="sc-20xx-xxxxx" required>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="Your E-mail" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+        
+     <!--Map-->
+            <div class="map">
+                <h2>Our Location</h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d849.2755705369569!2d80.57596064470995!3d5.937988878241547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae1391b4a29e707%3A0xd54277175e326bc2!2sUniversity%20of%20Ruhuna!5e0!3m2!1sen!2slk!4v1768547276493!5m2!1sen!2slk"
+                     style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+    <!--Footer-->
+    <footer class="footer">
+
+    </footer>
+
+    <script>
+        document.getElementById("contact-Form").addEventListener("submit", function (e) {
+
+            e.preventDefault();
+
+            alert("Your message has been successfully received.Thank You.")
+        });
+    </script>
+
+
+</body>
+
+</html>

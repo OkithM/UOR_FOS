@@ -219,12 +219,13 @@ body {
     border-radius: 10px;
 }
 
-.depart_images{
-    height: 40px;
-}
-
 #inside_departments{
     padding:5px;
+}
+
+.departments_link{
+    text-decoration: none;
+    color:black;
 }
 
 .under_departments{
@@ -232,15 +233,16 @@ body {
     border-radius: 4px;
     display: flex;
     align-items: center;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin:4.5px;
+    padding-top:12px;
+    padding-bottom:12px;
 }
 
-.list_contents{
-    width:100%;
+.depart_images{
+    height: 40px;
 }
-
-.under_departments
 
 .under_departments h4{
     margin:1px;
@@ -252,37 +254,59 @@ body {
     border-color:gold; 
 }
 
-.contact img {
-    height: 3vh;
+.under_departments img{
+    padding-right: 15px;
 }
 
-#venue {
-    text-align: left;
-    margin-left: 3vh;
+.list_contents{
+    width:100%;
 }
 
-#gmail {
+#inside_location{
+    display:flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19);
+    width:100%;
+    border-radius: 10px;
+}
+
+.contact{
+    border:1px solid #e4f0fa; 
+    border-radius: 4px;
     display: flex;
-    justify-content: right;
-    font-size: 0.9em;
-    text-align: right;
-    padding-bottom: 1vh;
-    padding-left:20px
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 3px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-top:3px;
+    padding-bottom:3px;
+    text-align: left;
 }
 
-#gmail img {
-    padding-top: 2.5vh;
+#venue{
+    align-items: start;
+}
+
+.contact_images{
+    height: 30px;
+    padding-right: 10px;
+}
+
+#location_image{
+    padding-top:10px;   
+}
+
+#email{
+    text-decoration: none;
+    color:#023c80;
 }
 
 #telephone{
-    display: flex;
-    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-
-#telephone img{
-    padding-left: 20px;
-}
-
 
 .news {
     flex: 1;
