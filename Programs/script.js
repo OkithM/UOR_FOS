@@ -16,12 +16,14 @@ function showpagename() {
     document.getElementById("pageslist").style.display = "flex";
 }
 
-function showdetails() {
-    var modal = document.getElementById("degreeModal");
+function showdetails(program) {
+    var modal = document.getElementById("modal-" + program);
     modal.style.display = "block";
 }
 
 function closeModal() {
-    var modal = document.getElementById("degreeModal");
-    modal.style.display = "none";
+    var modals = document.querySelectorAll('.modal');
+    modals.forEach(function (modal) {
+        modal.style.display = "none";
+    });
 }
