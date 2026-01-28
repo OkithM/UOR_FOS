@@ -30,6 +30,27 @@
                     environment, and mentorship needed to thrive in a rapidly evolving digital landscape.</p>
             </div>
             <div class="intro-divider"></div>
+
+            <div class="counter-section">
+                <div class="counter-box">
+                    <h2 class="counter" value="500">0000</h2>
+                    <p>Institutional Staffs</p>
+                    <div><img src="./src/staff.png"></div>
+                </div>
+
+                <div class="counter-box">
+                    <h2 class="counter" value="3000">0000</h2>
+                    <p>External Students</p>
+                    <div><img src="./src/student.png"></div>
+                </div>
+
+                <div class="counter-box">
+                    <h2 class="counter" value="3000">0000</h2>
+                    <p>Internal Students</p>
+                    <div><img src="./src/student.png"></div>
+                </div>
+            </div>
+
         </div>
 
         <div id="ahead">
@@ -217,7 +238,24 @@
                     var news = `<div class="news"><h3 style="color: #002147;">${latestnews[i].title.slice(0, 50)}${dots}</h3><div class="news-img" style="background-image: url(${serverUrl}/${latestnews[i].image_path});"  ></div> <p class="description">${latestnews[i].content.slice(0, 100)}...</p><button> <a href="https://www.ruh.ac.lk/index.php/en/news/895-the-32nd-convocation-2025" target="_blank">Read More</a> </button></div>`
                     newsGrid.innerHTML += news;
                 }
-            });   
+            });
+
+        const counters = document.querySelectorAll(".counter");
+
+        counters.forEach(function (counter) {
+            let target = +counter.getAttribute("value");
+            let current = 0;
+
+            function countUp() {
+                if (current < target) {
+                    current+=100;
+                    counter.innerHTML = current;
+                    setTimeout(countUp, 40);
+                }
+            }
+
+            countUp();
+        });
     </script>
 </body>
 
