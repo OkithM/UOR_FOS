@@ -94,5 +94,23 @@ function login(event) {
         });
 }
 
+function autologin() {
+    const token = localStorage.getItem("token");
+    if (token) {
+        fetch(`${serverUrl}/autologin`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ token: token })
+        }).then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    toAdminConsole();
+                }
+                else {
+                    document.getElementById("loginForm").style.display = "flex";
+                }
+            });
+    }
+}
 
-console.log(JSON.stringify(localStorage.getItem("token")));
+autologin();

@@ -126,6 +126,15 @@ app.post("/createNews", upload.single("image"), async (req, res) => {
 
 });
 
+app.post("/autologin", async (req, res) => {
+  const { token } = req.body;
+  if (await isTokenValid(token)) {
+    res.json({ success: true });
+  } else {
+    res.json({ success: false });
+  }
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
