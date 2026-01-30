@@ -83,6 +83,13 @@ app.use(
   })
 );
 
+app.get("/latestnews", (req, res) => {
+  res.json(lnews);
+});
+
+
+// -----------------Admin-----------------
+
 app.post("/login", (req, res) => {
   var username = req.body.username;
   var password = req.body.password;
@@ -96,10 +103,6 @@ app.post("/login", (req, res) => {
       console.log("Login failed for user:", username);
     }
   })
-});
-
-app.get("/latestnews", (req, res) => {
-  res.json(lnews);
 });
 
 app.post("/createNews", upload.single("image"), async (req, res) => {
@@ -130,8 +133,28 @@ app.post("/autologin", async (req, res) => {
   const { token } = req.body;
   if (await isTokenValid(token)) {
     res.json({ success: true });
+    console.log("Auto-login successful for token:", token);
   } else {
     res.json({ success: false });
+  }
+});
+
+// ------------------Feedback-----------------
+
+app.post("/feedbacks", async (req, res) => {
+  const { token } = req.body;
+  if (await isTokenValid(token)) {
+    try {
+      const [rows] = await pool.query("SELECT * FROM feedback ORDER BY submitted_at DESC;");
+      var responseData = {
+        success: true,
+        feedbacks: rows
+      };
+      res.json(responseData);
+    } catch (err) {
+      console.error("Error fetching feedbacks:", err);
+      res.json({ success: false, message: "Database error" });
+    }
   }
 });
 
