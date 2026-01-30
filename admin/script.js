@@ -33,6 +33,9 @@ function createnews(event) {
     const content = document.getElementById("content").value.trim();
     const date = document.getElementById("date").value;
     const image = document.getElementById("image").files[0];
+    const token = localStorage.getItem("token")
+
+    console.log("Token:", token);
 
     if (!title || !content || !date || !image) {
         alert("Please fill in all fields and select an image.");
@@ -42,6 +45,7 @@ function createnews(event) {
     formData.append("content", content);
     formData.append("date", date);
     formData.append("image", image);
+    formData.append("token", token);
 
     console.log(...formData.entries());
     fetch(`${serverUrl}/createNews`, {
@@ -64,7 +68,7 @@ function createnews(event) {
         });
 }
 
-function toconsole() {
+function toAdminConsole() {
     document.getElementById("loginForm").style.display = "none";
     document.getElementById("form-container").style.display = "block";
 }
@@ -82,10 +86,31 @@ function login(event) {
     }).then(response => response.json())
         .then(data => {
             if (data.success) {
-                // localStorage.setItem("token", data.token);
-                toconsole();
+                localStorage.setItem("token", data.token);
+                toAdminConsole();
             } else {
                 alert("Login failed.");
             }
         });
 }
+
+function autologin() {
+    const token = localStorage.getItem("token");
+    if (token) {
+        fetch(`${serverUrl}/autologin`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ token: token })
+        }).then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    toAdminConsole();
+                }
+                else {
+                    document.getElementById("loginForm").style.display = "flex";
+                }
+            });
+    }
+}
+
+autologin();

@@ -18,7 +18,7 @@ function showpagename() {
 
 function showdetails(program) {
     var modal = document.getElementById("modal-" + program);
-    modal.style.display = "block";
+    modal.style.display = "flex";
 }
 
 function closeModal() {

@@ -47,7 +47,7 @@ async function fetchLatestNews() {
 }
 
 async function crateToken(username) {
-  token = crypto.randomBytes(16).toString("hex") + "-" + username;
+  const token = crypto.randomBytes(16).toString("hex") + "-" + username;
   await pool.query("UPDATE admin SET token = ? WHERE username = ?", [token, username]);
   return token;
 }
@@ -62,6 +62,16 @@ async function verifylogin(username, password) {
   }
 }
 
+async function isTokenValid(token) {
+  try {
+    const [rows] = await pool.query("SELECT * FROM admin WHERE token = ?", [token]);
+    console.log("Token verification rows:", rows);
+    return rows.length > 0;
+  } catch (err) {
+    console.error("Error verifying token:", err);
+    return false;
+  }
+}
 // Middleware to parse JSON data
 app.use(express.json());
 
@@ -74,13 +84,14 @@ app.use(
 );
 
 app.post("/login", (req, res) => {
-  username = req.body.username;
-  password = req.body.password;
-  verifylogin(username, password).then((user) => {
+  var username = req.body.username;
+  var password = req.body.password;
+  verifylogin(username, password).then(async (user) => {
     if (user.length > 0) {
       console.log("Login successful for user:", username);
-      let token = crateToken(username);
+      let token = await crateToken(username);
       res.json({ success: true, token: token });
+      console.log("Generated token for user:", username, token);
     } else {
       console.log("Login failed for user:", username);
     }
@@ -92,19 +103,35 @@ app.get("/latestnews", (req, res) => {
 });
 
 app.post("/createNews", upload.single("image"), async (req, res) => {
-  const { title, content, date } = req.body;
+  const { title, content, date, token } = req.body;
   const imagePath = "images/" + req.file.filename;
-  try {
-    const [result] = await pool.query(
-      "INSERT INTO news (title, content, date, image_path) VALUES (?, ?, ?, ?)",
-      [title, content, date, imagePath]
-    );
-    console.log("News item inserted:", result.insertId);
-    fetchLatestNews(); // Refresh latest news
+  console.log("Received news item:", title, token);
+  if (await isTokenValid(token)) {
+    try {
+      const [result] = await pool.query(
+        "INSERT INTO news (title, content, date, image_path) VALUES (?, ?, ?, ?)",
+        [title, content, date, imagePath]
+      );
+      console.log("News item inserted:", result.insertId);
+      fetchLatestNews(); // Refresh latest news
+      res.json({ success: true });
+    } catch (err) {
+      console.error("Error inserting news item:", err);
+      res.json({ success: false, message: "Database error" });
+    }
+  }
+  else {
+    res.json({ success: false, message: "Invalid token" });
+  }
+
+});
+
+app.post("/autologin", async (req, res) => {
+  const { token } = req.body;
+  if (await isTokenValid(token)) {
     res.json({ success: true });
-  } catch (err) {
-    console.error("Error inserting news item:", err);
-    res.json({ success: false, message: "Database error" });
+  } else {
+    res.json({ success: false });
   }
 });
 
