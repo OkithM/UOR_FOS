@@ -21,7 +21,10 @@
         </form>
     </div>
     <div class="form-container" id="form-container">
-        <h1>Upload News Item</h1>
+        <div id="title_button">
+            <h1>Upload News Item</h1>
+            <button onclick="toFeedbacks();">View Feedbacks</button>
+        </div>
         <form method="post" enctype="multipart/form-data" onsubmit="createnews(event);">
             <div class="row">
                 <div>
@@ -58,6 +61,21 @@
                 <button type="reset" class="secondary">Reset</button>
             </div>
         </form>
+    </div>
+    <div id="feedback-container" class="form-container">
+        <div id="title_button">
+            <h1>Feedbacks</h1>
+            <button onclick="toNewsForm();">Upload News</button>
+        </div>
+        <div id="feedback-list">
+            <div class="feedback">
+                <p><b>Date</b> : 2024-01-01</p>
+                <p><b>Name</b> : John Doe</p>
+                <p><b>StudentID</b> : 123456789</p>
+                <p><b>Email</b> : john.doe@example.com</p>
+                <p><b>Message</b> : This is a sample feedback message.</p>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
