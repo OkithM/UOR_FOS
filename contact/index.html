@@ -18,7 +18,7 @@
         <h2 style="color: rgb(255, 255, 255);">Faculty of Science, University of Ruhuna</h2>
     </div>
     <!--intro-->
-    
+
     <div class="intro">
         <h2>Introduction.</h2>
         <p>Welcome to the Faculty of Science at the University of Ruhuna.Our Faculty is committed to excellence
@@ -29,10 +29,10 @@
             matters,we warmly invite you to get in touch with us using the contact details provided below.
             Our team is always ready to assist you and provide the information you need.
         </p>
-           <div class="intro-divider">
-    </div>
+        <div class="intro-divider">
+        </div>
 
- 
+
 
     </div>
 
@@ -73,14 +73,15 @@
                 <section class="social-media">
                     <h3>Follow Us</h3>
                     <a href="https://web.facebook.com/groups/26171090307/?_rdc=1&_rdr#">
-                    <img src="src/fb.png" alt="fbicon" width="50" height="50">
-                </a> 
+                        <img src="src/fb.png" alt="fbicon" width="50" height="50">
+                    </a>
 
-                <a href="https://www.instagram.com/explore/locations/100911762319687/faculty-of-science-university-of-ruhuna/">
-                    <img src="src/in.png" alt="instraicon" width="50" height="50">
-                </a>
-            </section>
-                
+                    <a
+                        href="https://www.instagram.com/explore/locations/100911762319687/faculty-of-science-university-of-ruhuna/">
+                        <img src="src/in.png" alt="instraicon" width="50" height="50">
+                    </a>
+                </section>
+
             </div>
 
         </div>
@@ -118,33 +119,7 @@
 
     </footer>
 
-    <script>
-        fetch('./../menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('menu').innerHTML = data;
-                activePage = document.getElementById("pagename_contact");
-                activePage.style.color = "#003366";
-                activePage.style.fontWeight = "bold";
-            });
-        fetch('./../footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-
-        function showpagename() {
-            document.getElementById("pageslist").style.display = "flex";
-        }
-
-        document.getElementById("contact-Form").addEventListener("submit", function (e) {
-
-            e.preventDefault();
-
-            alert("Your message has been successfully received.Thank You.")
-        });
-
-    </script>
+    <script src="./script.js"></script>
 
 
 </body>
