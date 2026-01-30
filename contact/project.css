@@ -51,8 +51,28 @@ body {
     text-align: center;
     flex-direction: column;
     padding: 30px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19);
+    /* box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19); */
     border-radius: 25px;
+    
+}
+
+.intro h2{
+    font-size: 2rem;
+    color: #002147;
+}
+
+.intro p{
+    max-width: 1000px;
+}
+.intro-divider{
+    width: 60px;
+    height: 4px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: #002147;
+    border-radius: 2px;
+    align-items: center;
+
 }
 #container {
     display: flex;
@@ -121,6 +141,7 @@ body {
     flex: 1;
     height: 100%;
 }
+
 
 .send {
     display: flex;
@@ -191,15 +212,16 @@ textarea {
 
 }
 
-button {
+#form_button {
     margin-top: 20px;
     padding: 12px;
     width: 100%;
-    border: none;
+    border:none;
     font-size: 16px;
-    border-radius: 4px;
+    border-radius: 10px;
     cursor: pointer;
-
+    background-color: #002147;
+    color: #f4f6f8;
 }
 
 #status {
