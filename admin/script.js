@@ -33,6 +33,9 @@ function createnews(event) {
     const content = document.getElementById("content").value.trim();
     const date = document.getElementById("date").value;
     const image = document.getElementById("image").files[0];
+    const token = localStorage.getItem("token")
+
+    console.log("Token:", token);
 
     if (!title || !content || !date || !image) {
         alert("Please fill in all fields and select an image.");
@@ -42,6 +45,7 @@ function createnews(event) {
     formData.append("content", content);
     formData.append("date", date);
     formData.append("image", image);
+    formData.append("token", token);
 
     console.log(...formData.entries());
     fetch(`${serverUrl}/createNews`, {
@@ -64,7 +68,7 @@ function createnews(event) {
         });
 }
 
-function toconsole() {
+function toAdminConsole() {
     document.getElementById("loginForm").style.display = "none";
     document.getElementById("form-container").style.display = "block";
 }
@@ -82,10 +86,83 @@ function login(event) {
     }).then(response => response.json())
         .then(data => {
             if (data.success) {
-                // localStorage.setItem("token", data.token);
-                toconsole();
+                localStorage.setItem("token", data.token);
+                toAdminConsole();
             } else {
                 alert("Login failed.");
             }
         });
+}
+
+function autologin() {
+    const token = localStorage.getItem("token");
+    if (token) {
+        fetch(`${serverUrl}/autologin`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ token: token })
+        }).then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    toAdminConsole();
+                    console.log("Auto-login successful.");
+                }
+                else {
+                    document.getElementById("loginForm").style.display = "flex";
+                    console.log("Auto-login failed.");
+                }
+            });
+    }
+}
+
+autologin();
+
+function loadfeedbacks() {
+    const token = localStorage.getItem("token");
+    fetch(`${serverUrl}/feedbacks`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token: token })
+    }).then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                console.log("Feedbacks loaded:", data.feedbacks);
+                const feedbackList = document.getElementById("feedback-list");
+                feedbackList.innerHTML = "";
+                data.feedbacks.forEach(feedback => {
+                    if (!feedback.student_name) {
+                        feedback.student_name = "-";
+                    }
+                    if (!feedback.student_id) {
+                        feedback.student_id = "-";
+                    }
+                    if (!feedback.email) {
+                        feedback.email = "-";
+                    }
+                    const feedbackDiv = document.createElement("div");
+                    feedbackDiv.className = "feedback";
+                    feedbackDiv.innerHTML = `
+                        <p><b>Date</b> : ${new Date(feedback.submitted_at).toLocaleString()}</p>
+                        <p><b>Name</b> : ${feedback.student_name}</p>
+                        <p><b>StudentID</b> : ${feedback.student_id}</p>
+                        <p><b>Email</b> : ${feedback.email}</p>
+                        <p><b>Message</b> : ${feedback.message_body}</p>
+                    `;
+                    console.log("Adding feedback:", feedback);
+                    feedbackList.appendChild(feedbackDiv);
+                });
+            } else {
+                console.error("Failed to load feedbacks:", data.message);
+            }
+        });
+}
+
+function toFeedbacks() {
+    document.getElementById("form-container").style.display = "none";
+    document.getElementById("feedback-container").style.display = "block";
+    loadfeedbacks();
+}
+function toNewsForm() {
+    document.getElementById("feedback-container").style.display = "none";
+    document.getElementById("form-container").style.display = "block";
 }

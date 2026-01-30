@@ -44,7 +44,7 @@
                 of software development, database management, and networking. It is designed for students who want a
                 versatile skill set to enter the tech industry quickly.</p>
             <p><b>Key Focus:</b> Software engineering basics, web technologies, and systems analysis.</p>
-            <button class="degree-btn whitebtn" onclick="showdetails();">Learn More</button>
+            <button class="degree-btn whitebtn" onclick="showdetails('bcs-general');">Learn More</button>
         </div>
         <div>
             <!-- blank -->
@@ -61,7 +61,7 @@
                 includes advanced topics like Artificial Intelligence, Data Science, and Cybersecurity. The final year
                 involves a significant individual research project or industrial placement.</p>
             <p><b>Key Focus:</b> Advanced algorithms, machine learning, and specialized technical innovation</p>
-            <button class="degree-btn bluebtn" onclick="showdetails();">Learn More</button>
+            <button class="degree-btn bluebtn" onclick="showdetails('bcs-special');">Learn More</button>
         </div>
         <div>
             <!-- blank -->
@@ -74,11 +74,11 @@
         <div class="degree-description">
             <h2>BSc General Degree (Bachelor of Science)</h2>
             <p><b>Duration:</b> 3 Years</p>
-            <p><b>Overview:</b> This flexible degree allows students to combine Comprother subjects
-                (such as Mathematics, Physics, or Statistics). It is ideal for thohi-disciplinary
+            <p><b>Overview:</b> This flexible degree allows students to combine Computer Science subjects
+                (such as Mathematics, Physics, or Statistics). It is ideal for interdisciplinary
                 education and plan to apply computing skills in scientific or analytical fields.</p>
             <p><b>Key Focus:</b> Interdisciplinary science, logic, and computational problem-solving.</p>
-            <button class="degree-btn whitebtn" onclick="showdetails();">Learn More</button>
+            <button class="degree-btn whitebtn" onclick="showdetails('bsc-general');">Learn More</button>
         </div>
         <div>
             <!-- blank -->
@@ -97,7 +97,7 @@
             <p><b>Key Focus:</b> Theory of computation, high-performance computing, and artificial intelligence
                 research.
             </p>
-            <button class="degree-btn bluebtn" onclick="showdetails();">Learn More</button>
+            <button class="degree-btn bluebtn" onclick="showdetails('bsc-special');">Learn More</button>
         </div>
         <div>
             <!-- blank -->
@@ -106,21 +106,21 @@
     <!-- Footer -->
     <div id="footer"></div>
 
-    <div id="degreeModal" class="modal">
+    <div id="modal-bcs-general" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal();">&times;</span>
 
             <div class="modal-header">
-                <h2>BCS General Degree (Honours)</h2>
-                <p class="subtitle">Bachelor of Computer Science - 4 Years</p>
+                <h2>BCS General Degree (Bachelor of Computer Science)</h2>
+                <p class="subtitle">3 Years</p>
             </div>
 
             <div class="modal-body">
                 <section class="overview">
                     <h3>Program Overview</h3>
-                    <p>This program provides a solid foundation in computer science principles, combining theoretical
-                        knowledge with practical industry skills. Students specialize in software engineering, data
-                        science, and network security.</p>
+                    <p>This program provides a broad foundation in computing, focusing on the core principles of
+                        software development, database management, and networking. It is designed for students who want
+                        a versatile skill set to enter the tech industry quickly.</p>
                 </section>
 
                 <section class="chart-section">
@@ -129,19 +129,19 @@
                         <div class="chart-bar-wrapper">
                             <span>Core CS</span>
                             <div class="bar-bg">
-                                <div class="bar-fill" style="width: 85%;">85%</div>
+                                <div class="bar-fill" style="width: 70%;">70%</div>
                             </div>
                         </div>
                         <div class="chart-bar-wrapper">
                             <span>Mathematics</span>
                             <div class="bar-bg">
-                                <div class="bar-fill" style="width: 60%;">60%</div>
+                                <div class="bar-fill" style="width: 50%;">50%</div>
                             </div>
                         </div>
                         <div class="chart-bar-wrapper">
                             <span>Soft Skills</span>
                             <div class="bar-bg">
-                                <div class="bar-fill" style="width: 40%;">40%</div>
+                                <div class="bar-fill" style="width: 30%;">30%</div>
                             </div>
                         </div>
                     </div>
@@ -159,16 +159,205 @@
                     <div class="career-paths">
                         <h3>Career Prospects</h3>
                         <ul>
-                            <li>Full Stack Developer</li>
-                            <li>System Architect</li>
-                            <li>Data Scientist</li>
+                            <li>Software Engineer</li>
+                            <li>Web Developer</li>
+                            <li>Database Administrator</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</body>
-<script src="./script.js"></script>
+
+    <div id="modal-bcs-special" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal();">&times;</span>
+
+            <div class="modal-header">
+                <h2>BCS Special Degree (Bachelor of Computer Science Honours)</h2>
+                <p class="subtitle">4 Years</p>
+            </div>
+
+            <div class="modal-body">
+                <section class="overview">
+                    <h3>Program Overview</h3>
+                    <p>An intensive, research-oriented program for students seeking in-depth expertise. It includes
+                        advanced topics like Artificial Intelligence, Data Science, and Cybersecurity. The final year
+                        involves a significant individual research project or industrial placement.</p>
+                </section>
+
+                <section class="chart-section">
+                    <h3>Credit Distribution</h3>
+                    <div class="chart-container">
+                        <div class="chart-bar-wrapper">
+                            <span>Core CS</span>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 90%;">90%</div>
+                            </div>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <span>Mathematics</span>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 70%;">70%</div>
+                            </div>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <span>Soft Skills</span>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 50%;">50%</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="details-grid">
+                    <div class="entry-req">
+                        <h3>Entry Requirements</h3>
+                        <ul>
+                            <li>Minimum 3 passes in GCE A/L (Physical Science stream)</li>
+                            <li>Credit pass for English in GCE O/L</li>
+                            <li>Successful completion of Aptitude Test</li>
+                        </ul>
+                    </div>
+                    <div class="career-paths">
+                        <h3>Career Prospects</h3>
+                        <ul>
+                            <li>AI Engineer</li>
+                            <li>Cybersecurity Specialist</li>
+                            <li>Research Scientist</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-bsc-general" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal();">&times;</span>
+
+            <div class="modal-header">
+                <h2>BSc General Degree (Bachelor of Science)</h2>
+                <p class="subtitle">3 Years</p>
+            </div>
+
+            <div class="modal-body">
+                <section class="overview">
+                    <h3>Program Overview</h3>
+                    <p>This flexible degree allows students to combine Computer Science subjects (such as Mathematics,
+                        Physics,
+                        or Statistics). It is ideal for those seeking interdisciplinary education and plan to apply
+                        computing skills in scientific or analytical fields.</p>
+                </section>
+
+                <section class="chart-section">
+                    <h3>Credit Distribution</h3>
+                    <div class="chart-container">
+                        <div class="chart-bar-wrapper">
+                            <span>Core Science</span>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 60%;">60%</div>
+                            </div>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <span>Mathematics</span>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 40%;">40%</div>
+                            </div>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <span>Interdisciplinary</span>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 50%;">50%</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="details-grid">
+                    <div class="entry-req">
+                        <h3>Entry Requirements</h3>
+                        <ul>
+                            <li>Minimum 3 passes in GCE A/L (Physical Science stream)</li>
+                            <li>Credit pass for English in GCE O/L</li>
+                            <li>Successful completion of Aptitude Test</li>
+                        </ul>
+                    </div>
+                    <div class="career-paths">
+                        <h3>Career Prospects</h3>
+                        <ul>
+                            <li>Data Analyst</li>
+                            <li>Scientific Researcher</li>
+                            <li>Computational Scientist</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-bsc-special" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal();">&times;</span>
+
+            <div class="modal-header">
+                <h2>BSc Special Degree (Bachelor of Science Honours in Computer Science)</h2>
+                <p class="subtitle">4 Years</p>
+            </div>
+
+            <div class="modal-body">
+                <section class="overview">
+                    <h3>Program Overview</h3>
+                    <p>This is a prestigious pathway for students who excel in their first two years. It focuses on the
+                        theoretical and mathematical foundations of computing. It prepares students for academic
+                        careers, high-level software architecture, or specialized scientific research.</p>
+                </section>
+
+                <section class="chart-section">
+                    <h3>Credit Distribution</h3>
+                    <div class="chart-container">
+                        <div class="chart-bar-wrapper">
+                            <span>Core CS</span>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 80%;">80%</div>
+                            </div>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <span>Mathematics</span>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 75%;">75%</div>
+                            </div>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <span>Research</span>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 60%;">60%</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="details-grid">
+                    <div class="entry-req">
+                        <h3>Entry Requirements</h3>
+                        <ul>
+                            <li>Minimum 3 passes in GCE A/L (Physical Science stream)</li>
+                            <li>Credit pass for English in GCE O/L</li>
+                            <li>Successful completion of Aptitude Test</li>
+                        </ul>
+                    </div>
+                    <div class="career-paths">
+                        <h3>Career Prospects</h3>
+                        <ul>
+                            <li>Academic Researcher</li>
+                            <li>Software Architect</li>
+                            <li>AI Researcher</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
 
 </html>

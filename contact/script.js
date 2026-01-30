@@ -1,8 +1,9 @@
+
 fetch('./../menu.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('menu').innerHTML = data;
-        activePage = document.getElementById("pagename_programs");
+        activePage = document.getElementById("pagename_contact");
         activePage.style.color = "#003366";
         activePage.style.fontWeight = "bold";
     });
@@ -16,14 +17,9 @@ function showpagename() {
     document.getElementById("pageslist").style.display = "flex";
 }
 
-function showdetails(program) {
-    var modal = document.getElementById("modal-" + program);
-    modal.style.display = "flex";
-}
+document.getElementById("contact-Form").addEventListener("submit", function (e) {
 
-function closeModal() {
-    var modals = document.querySelectorAll('.modal');
-    modals.forEach(function (modal) {
-        modal.style.display = "none";
-    });
-}
+    e.preventDefault();
+
+    alert("Your message has been successfully received.Thank You.")
+});
