@@ -20,3 +20,23 @@ fetch(`${serverUrl}/latestnews`, {
       document.body.innerHTML += newsHTML;
     }
   });
+
+// 1. Apply formatting commands
+function execCmd(command) {
+  document.execCommand(command, false, null);
+}
+
+// 2. Capture the HTML on submit
+const form = document.getElementById('editorForm');
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  // Get the innerHTML from the div
+  const richText = document.getElementById('editor').innerHTML;
+
+  // Assign it to the hidden input
+  document.getElementById('htmlOutput').value = richText;
+
+  console.log("Saved HTML Code:", richText);
+  alert("HTML Saved! check console.");
+});

@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./index.css">
 </head>
+
 <body>
+    <form id="editorForm">
+        <div class="toolbar">
+            <button type="button" onclick="execCmd('bold')"><b>B</b></button>
+            <button type="button" onclick="execCmd('italic')"><i>I</i></button>
+            <button type="button" onclick="execCmd('insertUnorderedList')">• List</button>
+        </div>
+
+        <div id="editor" contenteditable="true" style="border: 1px solid #ccc; min-height: 100px; padding: 10px;">
+            Start typing here...
+        </div>
+
+        <input type="hidden" name="content" id="htmlOutput">
+
+        <button type="submit">Save as HTML</button>
+    </form>
     <script src="./script.js"></script>
 </body>
+
 </html>

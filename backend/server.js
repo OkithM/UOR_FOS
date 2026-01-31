@@ -158,6 +158,22 @@ app.post("/feedbacks", async (req, res) => {
   }
 });
 
+app.post("/submitFeedback", async (req, res) => {
+  const { student_name, student_id, email, message_body } = req.body;
+  try {
+    const timeStamp = new Date();
+    const [result] = await pool.query(
+      "INSERT INTO feedback (student_name, student_id, email, message_body, submitted_at) VALUES (?, ?, ?, ?, NOW())",
+      [student_name, student_id, email, message_body, timeStamp]
+    );
+    console.log("Feedback submitted:", result.insertId);
+    res.json({ success: true });
+  } catch (err) {
+    console.error("Error submitting feedback:", err);
+    res.json({ success: false, message: "Database error" });
+  }
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
