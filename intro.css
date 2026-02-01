@@ -1,0 +1,93 @@
+/* Shared intro styles for Programs, Home, Department, News, Contact */
+
+.intro,
+#intro,
+.program-intro,
+#intro-wrap .intro {
+    padding: 60px 20px;
+    background-color: transparent;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.program-intro .container,
+.intro .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.program-intro h2,
+.intro h2,
+#intro h2,
+#intro-wrap .intro h2 {
+    color: #002147;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.program-intro p,
+.intro p,
+#intro p,
+#intro-wrap .intro p {
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.intro-divider {
+    width: 60px;
+    height: 4px;
+    background-color: #002147;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* When the intro block uses a dark background (e.g. news .intro), make the divider light */
+.intro .intro-divider {
+    background-color: #002147;
+}
+
+/* Department page: selectors for the H2 + paragraph that follow the landing section */
+section#landing+h2,
+section#landing+h2+div {
+    padding: 50px 0 0 0;
+    background-color: transparent;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section#landing+h2 {
+    color: #002147;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+section#landing+h2+div p {
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section#landing+h2+div+.intro-divider {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+
+    .intro,
+    #intro,
+    .program-intro {
+        padding: 30px 12px;
+    }
+
+    .program-intro h2,
+    .intro h2 {
+        font-size: 1.6rem;
+    }
+}
