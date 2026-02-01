@@ -87,7 +87,6 @@ app.get("/latestnews", (req, res) => {
   res.json(lnews);
 });
 
-
 // -----------------Admin-----------------
 
 app.post("/login", (req, res) => {
