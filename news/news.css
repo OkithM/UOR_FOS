@@ -18,7 +18,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 400px;
-    justify-self: center;
+    justify-content: center;
     align-items: center;
     z-index: -1;
     background-attachment: fixed;
@@ -29,8 +29,9 @@ body {
     font-size: 3em;
     margin: 0;
     padding: 0;
-    margin-top: 150px;
+    margin-top: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
 }
 
 #landing p {
@@ -67,13 +68,58 @@ body {
 }
 
 #special_announcements {
-    display: flex;
-    align-items: left;
-    justify-content: space-around;
-    flex-direction: column;
     background-color: #002147;
-    color: white;
-    padding: 20px;
+    color: #f3f9ff;
+    padding: 28px;
+    box-shadow: 0 8px 30px rgba(0, 20, 40, 0.45);
+}
+
+.announcements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 16px;
+}
+
+.announcement {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.announcement .ann-title {
+    font-weight: 700;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.announcement p {
+    margin: 0;
+    color: #b3b3b3;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.announcement hr {
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+    #special_announcements {
+        padding: 18px;
+    }
+
+    .announcement .ann-title {
+        font-size: 16px;
+    }
 }
 
 #events {

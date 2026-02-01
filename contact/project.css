@@ -18,7 +18,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 400px;
-    justify-self: center;
+    justify-content: center;
     align-items: center;
     z-index: -1;
     background-size: cover;
@@ -31,7 +31,7 @@ body {
     font-size: 3em;
     margin: 0;
     padding: 0;
-    margin-top: 150px;
+    margin-top: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 

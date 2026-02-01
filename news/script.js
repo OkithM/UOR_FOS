@@ -19,25 +19,24 @@ function showpagename() {
 
 const newsGrid = document.getElementById("news-grid");
 
-var latestnews = [];
+var allnews = [];
 const serverUrl = "http://localhost:3000";
 var dots = "";
 
-fetch(`${serverUrl}/latestnews`, {
+fetch(`${serverUrl}/allnews`, {
   method: "GET",
 })
   .then((response) => response.json())
   .then((data) => {
-    latestnews = data;
-    console.log(latestnews);
+    allnews = data;
 
-    for (let i = 0; i < 3; i++) {
-      if (latestnews[i].title.length > 50) {
+    for (let i = 0; i < allnews.length; i++) {
+      if (allnews[i].title.length > 50) {
         dots = "...";
       } else {
         dots = "";
       }
-      var news = `<div class="news"><h3 style="color: #002147;">${latestnews[i].title.slice(0, 50)}${dots}</h3><div class="news-img" style="background-image: url(${serverUrl}/${latestnews[i].image_path});"  ></div> <p class="description">${latestnews[i].content.slice(0, 100)}...</p><button onclick="loadNewsDetails(${latestnews[i].id})">Read More</button></div>`
+      var news = `<div class="news"><h3 style="color: #002147;">${allnews[i].title.slice(0, 50)}${dots}</h3><div class="news-img" style="background-image: url(${serverUrl}/${allnews[i].image_path});"  ></div> <p class="description">${allnews[i].content.slice(0, 100)}...</p><button onclick="loadNewsDetails(${allnews[i].id})">Read More</button></div>`
       newsGrid.innerHTML += news;
     }
   });

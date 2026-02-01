@@ -3,6 +3,7 @@ const app = express();
 const PORT = 3000;
 
 let lnews = [];
+let allnews = [];
 
 const cors = require("cors");
 
@@ -43,6 +44,16 @@ async function fetchLatestNews() {
     console.log("Latest news fetched:", lnews.length);
   } catch (err) {
     console.error("Error fetching latest news:", err);
+  }
+}
+
+async function fetchAllNews() {
+  try {
+    const [rows] = await pool.query("SELECT * FROM news ORDER BY date DESC LIMIT 12;");
+    allnews = rows;
+    console.log("All news fetched:", allnews.length);
+  } catch (err) {
+    console.error("Error fetching all news:", err);
   }
 }
 
@@ -87,6 +98,11 @@ app.get("/latestnews", (req, res) => {
   res.json(lnews);
 });
 
+app.get("/allnews", (req, res) => {
+  res.json(allnews);
+});
+
+
 // -----------------Admin-----------------
 
 app.post("/login", (req, res) => {
@@ -115,7 +131,8 @@ app.post("/createNews", upload.single("image"), async (req, res) => {
         [title, content, date, imagePath]
       );
       console.log("News item inserted:", result.insertId);
-      fetchLatestNews(); // Refresh latest news
+      fetchLatestNews();
+      fetchAllNews();
       res.json({ success: true });
     } catch (err) {
       console.error("Error inserting news item:", err);
@@ -179,3 +196,4 @@ app.listen(PORT, () => {
 });
 
 fetchLatestNews();
+fetchAllNews();
