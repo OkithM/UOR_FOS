@@ -48,10 +48,10 @@ function loadNewsDetails(newsId) {
       document.getElementById("news-view-container").innerHTML = data;
     })
     .then(() => {
-      document.getElementById("news_healine").innerText = latestnews.find(n => n.id === newsId).title;
-      document.getElementById("date_creadits").innerText = latestnews.find(n => n.id === newsId).date;
-      document.getElementById("news_img").style.backgroundImage = `url(${serverUrl}/${latestnews.find(n => n.id === newsId).image_path})`;
-      document.getElementById("news_description").innerText = latestnews.find(n => n.id === newsId).content;
+      document.getElementById("news_healine").innerText = allnews.find(n => n.id === newsId).title;
+      document.getElementById("date_creadits").innerText = allnews.find(n => n.id === newsId).date;
+      document.getElementById("news_img").style.backgroundImage = `url(${serverUrl}/${allnews.find(n => n.id === newsId).image_path})`;
+      document.getElementById("news_description").innerText = allnews.find(n => n.id === newsId).content;
       document.getElementById("news-view-container").style.display = "block";
       document.getElementById("news_close").addEventListener("click", () => {
         document.getElementById("news-view-container").style.display = "none";
