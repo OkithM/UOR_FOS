@@ -31,7 +31,7 @@ fetch(`${serverUrl}/allnews`, {
     allnews = data;
 
     for (let i = 0; i < allnews.length; i++) {
-      if (allnews[i].title.length > 50) {
+      if (allnews[i].title.length > 50) { 
         dots = "...";
       } else {
         dots = "";
